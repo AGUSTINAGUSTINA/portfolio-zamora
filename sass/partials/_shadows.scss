@@ -1,0 +1,19 @@
+// Mixin file exclusively for shadow utility mixins
+
+// Pequeñas variaciones de sombra para reutilizar en componentes
+
+@mixin shadow-light {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+@mixin shadow-medium {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+@mixin shadow-large {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+@mixin shadow-extra-large {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}

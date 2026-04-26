@@ -1,0 +1,131 @@
+@use 'variables' as *;
+.bienvenida h1{
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(241, 223, 223, 0.94);
+}
+#roles {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .role-designer,
+  .role-coder {
+    flex: 1;
+    position: relative;
+    flex-direction: column;
+    transition: flex 0.8s ease;
+    overflow: hidden;
+    cursor: pointer;
+
+    .image-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.8s ease, filter 0.6s ease;
+      z-index: 1;
+    }
+
+    // Imagen más brillante al hacer hover
+    &:hover .image-bg {
+      filter: brightness(100%);
+    }
+
+    // Descripción general
+    .description {
+      position: absolute;
+      top: 20%;
+      transform: translateY(-50%);
+      z-index: 2;
+      color: black;
+      padding: 0 3rem;
+      
+    }
+
+    h2.principal {
+      font-size: 32px;
+      font-weight: $semibold;
+      margin-top: 10px;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      width: 100%;
+    }
+
+    p.description {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      text-align: center;
+      margin-top: 100px;
+      
+    }
+
+    &:hover p.description {
+      opacity: 100;
+      color: black !important;
+    }
+  }
+
+  // === UBICACIÓN DE LOS BLOQUES ===
+  .role-designer .description {
+    text-align: center;
+  }
+
+  .role-coder .description {
+    text-align: center;
+  }
+
+  // === IMÁGENES DE FONDO ===
+  .role-designer .image-bg {
+    background-image: url("assets/ux-ui-img.png");
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.823);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s ease;
+      z-index: 2;
+    }
+  }
+
+  .role-coder .image-bg {
+    background-image: url("assets/frontend-img.png");
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.823);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.6s ease;
+      z-index: 2;
+    }
+  }
+
+  // === EFECTO DE BARRIDO ===
+  .role-designer:hover .image-bg::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .role-coder:hover .image-bg::before {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  // === EXPANSIÓN DE CADA MITAD ===
+  .role-designer:hover {
+    flex: 30;
+  }
+
+  .role-coder:hover {
+    flex: 30;
+  }
+}
+

@@ -1,0 +1,81 @@
+// ==================== WELCOME MESSAGE & HERO ENHANCEMENTS ====================
+
+@use 'variables' as *;
+@use 'mixin' as *;
+
+.welcome-message {
+	margin-bottom: 30px;
+	animation: slideInDown 0.8s ease-out;
+
+	@include small-mobile {
+		margin-bottom: 15px;
+	}
+
+	@include tablet {
+		margin-bottom: 25px;
+	}
+
+	@include desktop {
+		margin-bottom: 40px;
+	}
+
+	.welcome-badge {
+		display: inline-block;
+		font-size: 12px;
+		font-weight: $semibold;
+		color: $acento;
+		background: rgba(243, 233, 233, 0.916);
+		padding: 8px 16px;
+		border-radius: 20px;
+		border: 1px solid rgba(255, 255, 255, 0.847);
+		backdrop-filter: blur(10px);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		transition: all 0.4s ease;
+
+		@include small-mobile {
+			font-size: 11px;
+			padding: 6px 14px;
+		}
+
+		@include tablet {
+			font-size: 12px;
+			padding: 8px 16px;
+		}
+
+		@include desktop {
+			font-size: 13px;
+			padding: 10px 20px;
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.868);
+				border-color: rgba(255, 255, 255, 0.884);
+				transform: translateY(-2px);
+			}
+		}
+	}
+}
+
+@keyframes slideInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

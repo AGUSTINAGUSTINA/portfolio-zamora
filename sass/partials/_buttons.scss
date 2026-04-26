@@ -1,0 +1,172 @@
+// ==================== CUSTOM BUTTONS STYLES ====================
+
+@use 'variables' as *;
+@use 'mixin' as *;
+
+// Botón primario
+.btn-primary-custom {
+	@include button-primary;
+	text-decoration: none;
+	display: inline-block;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&.btn-lg {
+		padding: 16px 40px;
+		font-size: 16px;
+
+		@include small-mobile {
+			padding: 14px 32px;
+			font-size: 14px;
+		}
+
+		@include tablet {
+			padding: 16px 40px;
+			font-size: 16px;
+		}
+
+		@include desktop {
+			padding: 18px 48px;
+			font-size: 18px;
+		}
+	}
+}
+
+// Botón outline
+.btn-outline-custom {
+	@include button-outline;
+	text-decoration: none;
+	display: inline-block;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&.btn-lg {
+		padding: 16px 40px;
+		font-size: 16px;
+
+		@include small-mobile {
+			padding: 14px 32px;
+			font-size: 14px;
+		}
+
+		@include tablet {
+			padding: 16px 40px;
+			font-size: 16px;
+		}
+
+		@include desktop {
+			padding: 18px 48px;
+			font-size: 18px;
+		}
+	}
+}
+
+// Botón contact nav
+.btn-contact-nav {
+	@include button-outline;
+	padding: 8px 16px !important;
+	font-size: 12px !important;
+	border-color: $acento !important;
+	color: $acento !important;
+
+	@include tablet {
+		padding: 10px 20px !important;
+		font-size: 13px !important;
+	}
+
+	@include desktop {
+		padding: 10px 24px !important;
+		font-size: 14px !important;
+
+		&:hover {
+			background-color: $acento !important;
+			color: white !important;
+		}
+	}
+}
+
+// Estilos generales para todos los botones
+.btn {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	font-family: $h;
+	font-weight: $semibold;
+	border-radius: 8px;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 0 3px rgba(160, 104, 104, 0.2);
+	}
+
+	&:active {
+		transform: scale(0.98);
+	}
+
+	// Ripple effect
+	&[data-morph] {
+		position: relative;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 0;
+			height: 0;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.5);
+			transform: translate(-50%, -50%);
+			transition: width 0.6s, height 0.6s;
+			z-index: -1;
+		}
+
+		&:active::before {
+			width: 300px;
+			height: 300px;
+		}
+	}
+}
+
+// Desabilitar botones
+.btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+
+	&:hover {
+		transform: none;
+	}
+}
+
+// Loading state
+.btn.loading {
+	color: transparent;
+	pointer-events: none;
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		top: 50%;
+		left: 50%;
+		margin-left: -8px;
+		margin-top: -8px;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		border-radius: 50%;
+		border-top-color: white;
+		animation: spinner 0.6s linear infinite;
+	}
+}
+
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}

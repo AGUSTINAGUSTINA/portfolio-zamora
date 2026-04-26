@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+h1, h2, h3, h4, p {
+    color: $violeta;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: $h;
+    font-style: normal;
+  }
+  
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    font-size: 32px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  h4 {
+    font-size: 18px;
+  }
+  
+  p {
+    font-family: $p;
+    font-size: 18px;
+  }

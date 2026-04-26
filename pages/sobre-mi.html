@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Product designer and front end developer with a passion for designing beautiful and functional user experiences.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agustina Zamora</title>
+    <!-- tipografia titillium web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.google
+    apis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <!-- tipografia public sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- CSS traducido de Sass-->
+    <link rel="stylesheet" href="../css/stylesass.css">
+
+</head>
+
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid links_container">
+            <!-- LOGO BRAND -->
+            <a class="navbar-brand logo_container" href="../index.html">
+                <img src="../assets/logo_superior.png" alt="Logo Principal" class="logo_navbar">
+                <span class="logo_subtitle">Zamora Agustina</span>
+            </a>
+            <!-- MENÚ HAMBURGUESA (visible solo en mobile)-->
+            <button class="navbar-toggler custom_toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon menu_icon"></span>
+            </button>
+            <!--BARRA EN DESKTOP (un link al lado del otro a la derecha)-->
+            <div class="collapse navbar-collapse custom_collapse" id="navbarNav">
+
+                <div class="navbar-content container_custom_navbar">
+                    <ul class="navbar-nav custom_navbar">
+                        <li class="nav-item custom_item">
+                            <a class="nav-link custom_links" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item custom_item">
+                            <a class="nav-link custom_links" href="sobre-mi.html">Sobre mí</a>
+                        </li>
+                        <li class="nav-item custom_item">
+                            <a class="nav-link custom_links" href="pages/portfolio-ux-ui.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item custom_link">
+                            <a class="nav-link-boton-turnos nav_turnos" href="pages/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="sobre-mi" class="quien-soy">
+            <h1>Sobre mí</h1>
+            <p class="sobre-mi">
+                Soy Licenciada en Nutrición y durante varios años tuve mi propio local (una dietética). Siempre me dediqué a escuchar activamente a mis pacientes y clientes para entender sus necesidades reales.
+            </p>
+            <p class="sobre-mi">
+                Con el tiempo no me sentí completamente conectada con la profesión, pero descubrí que lo que realmente me apasionaba era escuchar, detectar necesidades y ofrecer soluciones.
+            </p>
+            <p class="sobre-mi">
+                Esa misma línea me llevó a estudiar Diseño UX/UI, donde pude aplicar esa capacidad de escucha para comprender a los usuarios y diseñar experiencias centradas en sus necesidades. Disfruté profundamente aprender sobre experiencia de usuario.
+            </p>
+            <p class="sobre-mi">
+                Luego sentí la necesidad de llevar esas soluciones a la realidad, por eso estudié desarrollo web. Me apasionó poder convertir el diseño en algo funcional, interactivo y útil.
+            </p>
+            <p class="sobre-mi">
+                Estudié HTML, CSS y JavaScript, y entendí que el desarrollo Front-End es lo que realmente me apasiona. Me resulta muy gratificante encarar un proyecto desde la idea, diseñarlo y luego darle vida con código e interactividad.
+            </p>
+
+
+
+
+            <img src="" alt="imagen de Agustina Maria Zamora">
+            <img src="" alt="Imagen de teclado">
+        </section>
+
+        <section id="bar-chart" class="dark nopad-b">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="align-r">Mis habilidades</h2>
+
+                    <div class="bar-chart">
+                        <!-- Eje Y -->
+                        <div class="axis">
+                            <div class="label">Experta</div>
+                            <div class="label">Avanzado</div>
+                            <div class="label">Intermedio</div>
+                            <div class="label">Inicial</div>
+                            <div class="label"></div>
+                            <div class="label"></div>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="bar violeta" style="--bar-percent: 70%;">
+                            <div class="fill"></div>
+                            <div class="percent">70%</div>
+                            <div class="skill">UX/UI Designer</div>
+                        </div>
+                        <div class="bar lila" style="--bar-percent: 60%;">
+                            <div class="fill"></div>
+                            <div class="percent">60%</div>
+                            <div class="skill">HTML Developer</div>
+                        </div>
+                        <div class="bar gris" style="--bar-percent: 60%;">
+                            <div class="fill"></div>
+                            <div class="percent">60%</div>
+                            <div class="skill">CSS Developer</div>
+                        </div>
+                        <div class="bar mocka" style="--bar-percent: 20%;">
+                            <div class="fill"></div>
+                            <div class="percent">20%</div>
+                            <div class="skill">JS Developer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Bootstrap JS vía CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <footer>
+        <section>
+            <div>
+                <img src="../assets/logo_superior.png" alt="Logo de Agustina Zamora">
+            </div>
+
+            <div>
+                <h3 class="footer_contacto">Explorar</h3>
+                <a href="./pages/portfolio.html" class="a-footer">Portfolio</a>
+                <a href="./pages/portfolio-ux-ui.html" class="a-footer">Portfolio UX/UI Designer</a>
+                <a href="./pages/portfolio-dev.html" class="a-footer">Portfolio Front-end Developer</a>
+            </div>
+
+            <div>
+                <h3 class="footer_contacto">Contacto</h3>
+                <p>Mail: licenciada.azamora@gmail.com</p>
+                <p>Teléfono: +5493512729694</p>
+            </div>
+
+            <div class="redes">
+                <h3 class="footer">Redes Sociales</h3>
+                <div class="iconos">
+                    <a href="https://www.instagram.com/js.humanizinig.education?igsh=MmNxdDN3djRkeGVh" class="a-footer">
+                        <img src="../assets/svg-linkedin.png" alt="Ir al perfil de Linkedin de Agustina Zamora"
+                            title="Linkedin" class="icono-redes">
+                        <a href="mailto:licenciada.azamoram@gmail.com" class="a-footer"> <img
+                                src="../assets/svg-mail.png" alt="Enviar un mail a Agustina Zamora" title="Email"
+                                class="icono-redes">
+
+
+                </div>
+            </div>
+        </section>
+        <hr>
+        <p class="footer_derechos_reservados">© 2024 - Todos los Derechos Reservados</p>
+    </footer>
+
+
+</body>
+
+</html>

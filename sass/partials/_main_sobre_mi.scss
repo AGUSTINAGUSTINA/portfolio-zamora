@@ -1,0 +1,84 @@
+
+  @use 'variables' as *;
+  // === CHART ===
+.bar-chart {
+  list-style: none;
+  padding: 2%;
+  margin: 2%;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  align-items: flex-end;
+  height: 85vh; // ocupa gran parte de la pantalla
+
+  .axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    .label {
+      font-size: 0.9rem;
+      color: $violeta;
+      text-align: left;
+      font-weight: $semibold;
+      
+
+    }
+  }
+
+  .bar {
+    flex: 0 0 150px; // ancho fijo máximo para cada barra
+    max-width: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+
+    .skill {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    .percent {
+      font-size: 0.8rem;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 0;
+      background-color: currentColor;
+      border-radius: 8px 8px 0 0;
+      transition: height 1s ease;
+    }
+  }
+
+  // Colores y animación
+  .violeta { color: #55466B; &::after { animation: fillBar 1s forwards; } }
+  .lila { color: #CDBBCB; &::after { animation: fillBar 1s forwards; } }
+  .gris { color: #ADA6B7; &::after { animation: fillBar 1s forwards; } }
+  .mocka { color: #BFB2B2; &::after { animation: fillBar 1s forwards; } }
+}
+
+// Animación de barra
+@keyframes fillBar {
+  0% { height: 0; }
+  100% { height: var(--bar-percent); }
+}
+
+// Mostrar porcentaje al hover
+.bar:hover .percent {
+  opacity: 1;
+}

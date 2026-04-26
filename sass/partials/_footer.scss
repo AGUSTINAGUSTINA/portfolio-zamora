@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+/*-----------------------FOOTER-------------------------------*/
+footer {
+  background-color: $violeta;
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  position: relative;
+
+  // SECCIÓN
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 10px;
+
+    // DIVISIONES DENTRO DE LA SECCIÓN
+    div {
+      flex: 1 50%;
+      margin: 10px;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        max-width: 150px;
+        height: 30%;
+        width: 30%;
+        align-items: center;
+      }
+    }
+
+    h3 {
+      text-align: left;
+      font-family: $h;
+      font-weight: normal;
+      font-size: 24px;
+      color: white;
+    }
+
+  }
+
+.a-footer {
+  text-align: left;
+  margin-top: 8px;
+  font-size: 16px;
+  color: white;
+  display: block;
+  margin-bottom: 0;
+  font-family: $p;
+  font-weight: $extralight;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: $semibold;
+  }
+}
+
+  }
+
+  p {
+    text-align: left;
+    margin-top: 8px;
+    font-size: 16px;
+    color: white;
+    display: block;
+    margin-bottom: 0;
+    font-family: $p;
+    font-weight: $extralight;
+
+
+    &.footer_derechos_reservados {
+      text-align: left;
+      margin-top: 2px;
+      font-size: 1rem;
+      color: white;
+      margin-bottom: 0;
+      flex-basis: 100%;
+    }
+  }
+
+  //REDES
+  .redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+
+    .iconos {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+      cursor: pointer;
+      margin: 0px;
+
+      .icono-redes {
+        width: 32px;
+        gap: 10px;
+      }
+    }
+  }

@@ -1,0 +1,1588 @@
+// ==================== MEDIA QUERIES Y RESPONSIVE DESIGN ====================
+// Mobile First Approach - Estilos para todos los tamaños de pantalla
+
+@use 'variables' as *;
+@use 'mixin' as *;
+@use 'sass:color';
+
+// ==================== GENERAL RESPONSIVE ====================
+
+html {
+	font-size: 16px;
+
+	@include small-mobile {
+		font-size: 14px;
+	}
+
+	@include tablet {
+		font-size: 16px;
+	}
+
+	@include desktop {
+		font-size: 18px;
+	}
+}
+
+body {
+	font-family: $p;
+	color: $violeta;
+}
+
+.container-lg {
+	margin: 0 auto;
+	padding: 0 20px;
+
+	@include small-mobile {
+		padding: 0 16px;
+	}
+
+	@include tablet {
+		padding: 0 40px;
+		max-width: 750px;
+	}
+
+	@include desktop {
+		padding: 0 60px;
+		max-width: 1200px;
+	}
+
+	@include large-desktop {
+		max-width: 1400px;
+		padding: 0 80px;
+	}
+}
+
+// ==================== NAVBAR RESPONSIVE ====================
+
+.navbar-minimal {
+	padding: 15px 0;
+	background: white;
+	border-bottom: 1px solid #f0f0f0;
+
+	@include tablet {
+		padding: 20px 0;
+	}
+
+	@include desktop {
+		padding: 25px 0;
+	}
+
+	.brand-name {
+		font-size: 18px;
+		font-weight: $bold;
+
+		@include small-mobile {
+			font-size: 16px;
+		}
+
+		@include tablet {
+			font-size: 20px;
+		}
+
+		@include desktop {
+			font-size: 24px;
+		}
+	}
+
+	.brand-subtitle {
+		font-size: 10px;
+		display: block;
+
+		@include small-mobile {
+			font-size: 9px;
+		}
+
+		@include tablet {
+			font-size: 11px;
+		}
+
+		@include desktop {
+			font-size: 12px;
+		}
+	}
+
+	.navbar-nav {
+		gap: 15px;
+
+		@include tablet {
+			gap: 25px;
+		}
+
+		@include desktop {
+			gap: 35px;
+		}
+
+		.nav-link {
+			font-size: 14px;
+			font-weight: $regular;
+			transition: all 0.3s ease;
+
+			@include tablet {
+				font-size: 15px;
+			}
+
+			@include desktop {
+				font-size: 16px;
+			}
+
+			&:hover {
+				color: $acento;
+			}
+		}
+
+		.btn-contact-nav {
+			@include button-outline;
+			padding: 8px 16px;
+			font-size: 12px;
+
+			@include tablet {
+				padding: 10px 20px;
+				font-size: 13px;
+			}
+
+			@include desktop {
+				padding: 12px 24px;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.navbar-toggler {
+		border: none;
+		padding: 0;
+
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+}
+
+// ==================== HERO SECTION RESPONSIVE ====================
+
+.hero-section {
+	height: 100vh;
+	min-height: 600px;
+	position: relative;
+	overflow: hidden;
+
+	@include small-mobile {
+		height: 70%;
+		min-height: 500px;
+	}
+
+	@include tablet {
+		height: 100vh;
+		min-height: 600px;
+	}
+
+	@include desktop {
+		height: 100vh;
+		min-height: 700px;
+	}
+
+	.hero-video-wrapper {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		.hero-video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.hero-overlay {
+			position: absolute;
+			inset: 0;
+			background: rgba(253, 252, 252, 0.944);
+		}
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		height: 100%;
+		@include flex-center;
+		flex-direction: column;
+		text-align: center;
+		color: white;
+		padding: 20px;
+
+		@include small-mobile {
+			padding: 16px;
+		}
+
+		@include tablet {
+			padding: 40px;
+		}
+
+		@include desktop {
+			padding: 60px;
+		}
+
+		.hero-title {
+			font-size: 32px;
+			font-weight: $bold;
+			margin-bottom: 15px;
+			line-height: 1.2;
+            color: white;
+
+			@include small-mobile {
+				font-size: 24px;
+				margin-bottom: 12px;
+			}
+
+			@include tablet {
+				font-size: 48px;
+				margin-bottom: 20px;
+			}
+
+			@include desktop {
+				font-size: 64px;
+				margin-bottom: 25px;
+			}
+
+			.highlight {
+				color: $acento;
+				text-decoration: underline;
+			}
+		}
+
+		.hero-subtitle {
+			font-size: 14px;
+			font-weight: $light;
+			margin-bottom: 30px;
+			max-width: 500px;
+			opacity: 0.95;
+
+			@include small-mobile {
+				font-size: 12px;
+				margin-bottom: 20px;
+				max-width: 90%;
+			}
+
+			@include tablet {
+				font-size: 16px;
+				margin-bottom: 35px;
+				max-width: 600px;
+			}
+
+			@include desktop {
+				font-size: 18px;
+				margin-bottom: 40px;
+				max-width: 700px;
+			}
+		}
+
+		.hero-cta {
+			display: flex;
+			gap: 15px;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			@include small-mobile {
+				flex-direction: column;
+				gap: 12px;
+			}
+
+			@include tablet {
+				flex-direction: row;
+				gap: 20px;
+			}
+
+			@include desktop {
+				gap: 25px;
+			}
+
+			.btn {
+				font-size: 13px;
+				padding: 10px 20px;
+
+				@include small-mobile {
+					font-size: 12px;
+					padding: 12px 24px;
+					width: 100%;
+				}
+
+				@include tablet {
+					font-size: 14px;
+					padding: 12px 28px;
+				}
+
+				@include desktop {
+					font-size: 16px;
+					padding: 14px 32px;
+				}
+			}
+		}
+	}
+
+	.scroll-indicator {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 3;
+		text-align: center;
+		color: white;
+		animation: bounce 2s infinite;
+
+		@include small-mobile {
+			bottom: 20px;
+			font-size: 12px;
+		}
+
+		@include tablet {
+			bottom: 30px;
+			font-size: 14px;
+		}
+
+		@include desktop {
+			bottom: 40px;
+			font-size: 14px;
+		}
+
+		i {
+			display: block;
+			margin-top: 8px;
+		}
+	}
+}
+
+// ==================== ABOUT SECTION RESPONSIVE ====================
+
+.about-section {
+	@include padding-section;
+	background: #fafafa;
+
+	.section-title {
+		@include heading-style($size-h2, $bold);
+		margin-bottom: 25px;
+
+		@include small-mobile {
+			font-size: 24px;
+			margin-bottom: 15px;
+		}
+
+		@include tablet {
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+
+		@include desktop {
+			font-size: 42px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.about-image {
+		margin-bottom: 30px;
+
+		@include tablet {
+			margin-bottom: 0;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 12px;
+			@include shadow-medium;
+		}
+	}
+
+	.about-text {
+		@include body-text($size-p, $regular);
+		margin-bottom: 20px;
+		line-height: 1.8;
+
+		@include small-mobile {
+			font-size: 14px;
+			margin-bottom: 15px;
+		}
+
+		@include tablet {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+
+		@include desktop {
+			font-size: 18px;
+			margin-bottom: 25px;
+		}
+	}
+
+	.specialty-card {
+		padding: 20px;
+		background: white;
+		border-radius: 12px;
+		text-align: center;
+		@include shadow-light;
+		transition: all 0.3s ease;
+
+		@include small-mobile {
+			padding: 16px;
+		}
+
+		@include tablet {
+			padding: 24px;
+		}
+
+		@include desktop {
+			padding: 28px;
+
+			&:hover {
+				@include shadow-large;
+				transform: translateY(-8px);
+			}
+		}
+
+		.specialty-icon {
+			font-size: 32px;
+			color: $acento;
+			margin-bottom: 12px;
+
+			@include small-mobile {
+				font-size: 28px;
+				margin-bottom: 10px;
+			}
+
+			@include desktop {
+				font-size: 40px;
+				margin-bottom: 16px;
+			}
+		}
+
+		h3 {
+			font-size: 16px;
+			font-weight: $semibold;
+			margin-bottom: 10px;
+
+			@include small-mobile {
+				font-size: 14px;
+				margin-bottom: 8px;
+			}
+
+			@include tablet {
+				font-size: 18px;
+				margin-bottom: 12px;
+			}
+
+			@include desktop {
+				font-size: 20px;
+				margin-bottom: 14px;
+			}
+		}
+
+		p {
+			font-size: 12px;
+			color: $grisaceo;
+
+			@include small-mobile {
+				font-size: 11px;
+			}
+
+			@include tablet {
+				font-size: 13px;
+			}
+
+			@include desktop {
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+// ==================== FEATURED WORKS SECTION RESPONSIVE ====================
+
+.featured-works-section {
+	@include padding-section;
+
+	.section-header {
+		margin-bottom: 40px;
+
+		@include small-mobile {
+			margin-bottom: 25px;
+		}
+
+		@include tablet {
+			margin-bottom: 35px;
+		}
+
+		@include desktop {
+			margin-bottom: 50px;
+		}
+
+		.section-title {
+			@include heading-style($size-h2, $bold);
+			margin-bottom: 12px;
+
+			@include small-mobile {
+				font-size: 24px;
+			}
+
+			@include tablet {
+				font-size: 32px;
+			}
+
+			@include desktop {
+				font-size: 42px;
+			}
+		}
+
+		.section-subtitle {
+			@include body-text($size-p, $light);
+			color: $grisaceo;
+
+			@include small-mobile {
+				font-size: 13px;
+			}
+
+			@include tablet {
+				font-size: 15px;
+			}
+
+			@include desktop {
+				font-size: 18px;
+			}
+		}
+	}
+
+	.work-card {
+		background: white;
+		border-radius: 12px;
+		overflow: hidden;
+		@include shadow-light;
+		transition: all 0.4s ease;
+		margin-bottom: 20px;
+
+		@include desktop {
+			margin-bottom: 0;
+
+			&:hover {
+				@include shadow-large;
+
+				.work-overlay {
+					opacity: 1;
+				}
+			}
+		}
+
+		.work-image {
+			position: relative;
+			overflow: hidden;
+			height: 250px;
+
+			@include small-mobile {
+				height: 200px;
+			}
+
+			@include tablet {
+				height: 280px;
+			}
+
+			@include desktop {
+				height: 300px;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.6s ease;
+			}
+
+			.work-overlay {
+				position: absolute;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.6);
+				@include flex-center;
+				opacity: 0;
+				transition: opacity 0.4s ease;
+
+				@include only-mobile {
+					opacity: 0.7;
+				}
+
+				.overlay-content {
+					text-align: center;
+					color: white;
+
+					.work-category {
+						display: inline-block;
+						background: $acento;
+						color: white;
+						padding: 6px 14px;
+						border-radius: 20px;
+						font-size: 12px;
+						font-weight: $semibold;
+
+						@include tablet {
+							padding: 8px 16px;
+							font-size: 13px;
+						}
+					}
+				}
+			}
+		}
+
+		&:hover .work-image img {
+			transform: scale(1.08);
+		}
+
+		.work-info {
+			padding: 20px;
+
+			@include small-mobile {
+				padding: 16px;
+			}
+
+			@include tablet {
+				padding: 24px;
+			}
+
+			@include desktop {
+				padding: 28px;
+			}
+
+			h3 {
+				font-size: 18px;
+				font-weight: $semibold;
+				margin-bottom: 10px;
+
+				@include small-mobile {
+					font-size: 16px;
+				}
+
+				@include tablet {
+					font-size: 20px;
+				}
+
+				@include desktop {
+					font-size: 22px;
+				}
+			}
+
+			p {
+				font-size: 13px;
+				color: $grisaceo;
+				margin-bottom: 15px;
+				line-height: 1.6;
+
+				@include small-mobile {
+					font-size: 12px;
+					margin-bottom: 12px;
+				}
+
+				@include tablet {
+					font-size: 14px;
+					margin-bottom: 15px;
+				}
+
+				@include desktop {
+					font-size: 15px;
+				}
+			}
+
+			.work-link {
+				@include button-outline;
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				font-size: 13px;
+				padding: 8px 16px;
+
+				@include tablet {
+					font-size: 14px;
+					padding: 10px 18px;
+				}
+
+				@include desktop {
+					font-size: 15px;
+					padding: 10px 20px;
+				}
+
+				i {
+					transition: transform 0.3s ease;
+					font-size: 12px;
+				}
+
+				&:hover i {
+					transform: translateX(4px);
+				}
+			}
+		}
+	}
+}
+
+// ==================== PORTFOLIO PAGE RESPONSIVE ====================
+
+.page-header {
+	@include padding-section;
+	background: linear-gradient(135deg, #f5f5f5, #fafafa);
+	text-align: center;
+
+	.page-title {
+		@include heading-style($size-h1, $bold);
+		margin-bottom: 15px;
+
+		@include small-mobile {
+			font-size: 28px;
+		}
+
+		@include tablet {
+			font-size: 40px;
+		}
+
+		@include desktop {
+			font-size: 52px;
+		}
+	}
+
+	.page-subtitle {
+		@include body-text($size-p, $light);
+		color: $grisaceo;
+		max-width: 600px;
+		margin: 0 auto;
+
+		@include small-mobile {
+			font-size: 13px;
+		}
+
+		@include tablet {
+			font-size: 15px;
+		}
+
+		@include desktop {
+			font-size: 18px;
+		}
+	}
+}
+
+.portfolio-filters-section {
+	padding: 30px 0;
+	border-bottom: 1px solid #f0f0f0;
+
+	@include tablet {
+		padding: 40px 0;
+	}
+
+	@include desktop {
+		padding: 50px 0;
+	}
+
+	.filters-wrapper {
+		display: flex;
+		gap: 12px;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@include small-mobile {
+			gap: 10px;
+		}
+
+		@include tablet {
+			gap: 15px;
+		}
+
+		@include desktop {
+			gap: 20px;
+		}
+
+		.filter-btn {
+			padding: 8px 16px;
+			border: 2px solid #e0e0e0;
+			background: white;
+			border-radius: 20px;
+			font-size: 12px;
+			font-weight: $semibold;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			color: $violeta;
+
+			@include tablet {
+				padding: 10px 20px;
+				font-size: 13px;
+			}
+
+			@include desktop {
+				padding: 12px 24px;
+				font-size: 14px;
+
+				&:hover {
+					border-color: $acento;
+					color: $acento;
+				}
+			}
+
+			&.active {
+				background: $acento;
+				border-color: $acento;
+				color: white;
+			}
+		}
+	}
+}
+
+.portfolio-section {
+	@include padding-section;
+
+	.portfolio-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 30px;
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			gap: 35px;
+		}
+
+		@include large-desktop {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
+		}
+	}
+
+	.portfolio-item {
+		animation: fadeIn 0.6s ease;
+	}
+
+	.portfolio-card {
+		background: white;
+		border-radius: 12px;
+		overflow: hidden;
+		@include shadow-light;
+		transition: all 0.4s ease;
+
+		@include desktop {
+			&:hover {
+				@include shadow-large;
+
+				.portfolio-overlay {
+					opacity: 1;
+				}
+
+				.portfolio-image img {
+					transform: scale(1.08);
+				}
+			}
+		}
+
+		.portfolio-image {
+			position: relative;
+			overflow: hidden;
+			height: 280px;
+
+			@include small-mobile {
+				height: 220px;
+			}
+
+			@include tablet {
+				height: 320px;
+			}
+
+			@include desktop {
+				height: 360px;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.6s ease;
+			}
+
+			.portfolio-overlay {
+				position: absolute;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.65);
+				@include flex-center;
+				flex-direction: column;
+				opacity: 0;
+				transition: opacity 0.4s ease;
+				gap: 20px;
+
+				@include only-mobile {
+					opacity: 0.7;
+				}
+
+				.project-category {
+					display: inline-block;
+					background: $acento;
+					color: white;
+					padding: 6px 14px;
+					border-radius: 20px;
+					font-size: 11px;
+					font-weight: $semibold;
+
+					@include tablet {
+						padding: 8px 16px;
+						font-size: 12px;
+					}
+
+					@include desktop {
+						padding: 10px 18px;
+						font-size: 13px;
+					}
+				}
+
+				.view-project-btn {
+					display: inline-flex;
+					align-items: center;
+					gap: 8px;
+					color: white;
+					background: transparent;
+					border: 2px solid white;
+					padding: 8px 16px;
+					border-radius: 6px;
+					font-size: 12px;
+					font-weight: $semibold;
+					cursor: pointer;
+					transition: all 0.3s ease;
+
+					@include tablet {
+						font-size: 13px;
+						padding: 10px 18px;
+					}
+
+					@include desktop {
+						font-size: 14px;
+						padding: 10px 20px;
+
+						&:hover {
+							background: white;
+							color: $acento;
+						}
+					}
+
+					i {
+						font-size: 12px;
+						transition: transform 0.3s ease;
+					}
+
+					&:hover i {
+						transform: translateX(4px);
+					}
+				}
+			}
+		}
+
+		.portfolio-info {
+			padding: 20px;
+
+			@include tablet {
+				padding: 24px;
+			}
+
+			@include desktop {
+				padding: 28px;
+			}
+
+			h3 {
+				font-size: 16px;
+				font-weight: $semibold;
+				margin-bottom: 10px;
+
+				@include small-mobile {
+					font-size: 14px;
+				}
+
+				@include tablet {
+					font-size: 18px;
+				}
+
+				@include desktop {
+					font-size: 20px;
+				}
+			}
+
+			p {
+				font-size: 12px;
+				color: $grisaceo;
+				margin-bottom: 15px;
+				line-height: 1.6;
+
+				@include small-mobile {
+					font-size: 11px;
+				}
+
+				@include tablet {
+					font-size: 13px;
+				}
+
+				@include desktop {
+					font-size: 14px;
+				}
+			}
+
+			.project-tags {
+				display: flex;
+				gap: 8px;
+				flex-wrap: wrap;
+
+				.tag {
+					display: inline-block;
+					background: #f0f0f0;
+					color: $violeta;
+					padding: 4px 10px;
+					border-radius: 4px;
+					font-size: 10px;
+					font-weight: $semibold;
+
+					@include tablet {
+						padding: 6px 12px;
+						font-size: 11px;
+					}
+
+					@include desktop {
+						padding: 6px 14px;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// ==================== CONTACT SECTION RESPONSIVE ====================
+
+.contact-section {
+	@include padding-section;
+
+	.contact-header {
+		text-align: center;
+		margin-bottom: 40px;
+
+		@include tablet {
+			margin-bottom: 50px;
+		}
+
+		@include desktop {
+			margin-bottom: 60px;
+		}
+
+		.section-title {
+			@include heading-style($size-h2, $bold);
+			margin-bottom: 15px;
+
+			@include small-mobile {
+				font-size: 24px;
+			}
+
+			@include tablet {
+				font-size: 32px;
+			}
+
+			@include desktop {
+				font-size: 42px;
+			}
+		}
+
+		.section-subtitle {
+			color: $grisaceo;
+
+			@include small-mobile {
+				font-size: 13px;
+			}
+
+			@include tablet {
+				font-size: 15px;
+			}
+
+			@include desktop {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.contact-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 30px;
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+
+		@include desktop {
+			grid-template-columns: 1fr 1fr;
+			gap: 50px;
+		}
+	}
+
+	.contact-form {
+		.form-group {
+			margin-bottom: 20px;
+
+			@include tablet {
+				margin-bottom: 24px;
+			}
+
+			@include desktop {
+				margin-bottom: 28px;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 8px;
+				font-weight: $semibold;
+				font-size: 13px;
+
+				@include tablet {
+					font-size: 14px;
+					margin-bottom: 10px;
+				}
+
+				@include desktop {
+					font-size: 15px;
+				}
+			}
+
+			input,
+			textarea {
+				width: 100%;
+				padding: 12px 16px;
+				border: 1px solid #e0e0e0;
+				border-radius: 8px;
+				font-family: $p;
+				font-size: 13px;
+				transition: all 0.3s ease;
+
+				@include tablet {
+					padding: 14px 18px;
+					font-size: 14px;
+				}
+
+				@include desktop {
+					padding: 14px 20px;
+					font-size: 15px;
+
+					&:focus {
+						border-color: $acento;
+						outline: none;
+						box-shadow: 0 0 0 3px rgba(160, 104, 104, 0.1);
+					}
+				}
+			}
+
+			textarea {
+				resize: vertical;
+				min-height: 140px;
+
+				@include desktop {
+					min-height: 160px;
+				}
+			}
+		}
+
+		.form-submit {
+			@include button-primary;
+			width: 100%;
+			margin-top: 10px;
+
+			@include tablet {
+				width: auto;
+				margin-top: 15px;
+			}
+
+			@include desktop {
+				margin-top: 20px;
+			}
+		}
+	}
+
+	.contact-info {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+
+		@include tablet {
+			grid-template-columns: 1fr;
+		}
+
+		@include desktop {
+			gap: 32px;
+		}
+
+		.info-card {
+			padding: 24px;
+			background: #f9f9f9;
+			border-radius: 12px;
+
+			@include desktop {
+				padding: 32px;
+			}
+
+			.info-icon {
+				font-size: 28px;
+				color: $acento;
+				margin-bottom: 12px;
+
+				@include desktop {
+					font-size: 32px;
+					margin-bottom: 16px;
+				}
+			}
+
+			h3 {
+				font-size: 16px;
+				font-weight: $semibold;
+				margin-bottom: 10px;
+
+				@include tablet {
+					font-size: 18px;
+				}
+
+				@include desktop {
+					font-size: 20px;
+				}
+			}
+
+			p {
+				color: $grisaceo;
+				font-size: 13px;
+				line-height: 1.6;
+
+				@include tablet {
+					font-size: 14px;
+				}
+
+				@include desktop {
+					font-size: 15px;
+				}
+
+				a {
+					color: $acento;
+					text-decoration: none;
+					transition: opacity 0.3s ease;
+
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+		}
+	}
+}
+
+// ==================== CTA SECTION RESPONSIVE ====================
+
+.final-cta-section {
+	@include padding-section;
+	background: linear-gradient(135deg, $acento 0%, color.adjust($acento, $lightness: -10%) 100%);
+	color: white;
+	text-align: center;
+
+	.cta-title {
+		font-size: 32px;
+		font-weight: $bold;
+		margin-bottom: 15px;
+
+		@include small-mobile {
+			font-size: 24px;
+		}
+
+		@include tablet {
+			font-size: 40px;
+		}
+
+		@include desktop {
+			font-size: 48px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.cta-subtitle {
+		font-size: 14px;
+		margin-bottom: 30px;
+		opacity: 0.95;
+
+		@include small-mobile {
+			font-size: 12px;
+			margin-bottom: 20px;
+		}
+
+		@include tablet {
+			font-size: 16px;
+			margin-bottom: 35px;
+		}
+
+		@include desktop {
+			font-size: 18px;
+			margin-bottom: 40px;
+		}
+	}
+
+	.btn {
+		background: white;
+		color: $acento;
+
+		&:hover {
+			background: #f5f5f5;
+		}
+	}
+}
+
+// ==================== FOOTER RESPONSIVE ====================
+
+.footer-section {
+	background: $violeta;
+	color: white;
+	padding: 40px 20px 20px;
+
+	@include tablet {
+		padding: 60px 40px 30px;
+	}
+
+	@include desktop {
+		padding: 80px 0 30px;
+	}
+
+	.footer-title {
+		font-size: 18px;
+		font-weight: $bold;
+		margin-bottom: 10px;
+
+		@include tablet {
+			font-size: 20px;
+			margin-bottom: 12px;
+		}
+
+		@include desktop {
+			font-size: 24px;
+			margin-bottom: 15px;
+		}
+	}
+
+	.footer-subtitle {
+		font-size: 12px;
+		opacity: 0.8;
+		margin-bottom: 20px;
+
+		@include tablet {
+			font-size: 13px;
+		}
+
+		@include desktop {
+			font-size: 14px;
+		}
+	}
+
+	.footer-subtitle-small {
+		font-size: 12px;
+		font-weight: $semibold;
+		margin-bottom: 12px;
+
+		@include tablet {
+			font-size: 13px;
+			margin-bottom: 16px;
+		}
+
+		@include desktop {
+			font-size: 14px;
+			margin-bottom: 18px;
+		}
+	}
+
+	.footer-links {
+		@include reset-list;
+
+		li {
+			margin-bottom: 8px;
+
+			@include desktop {
+				margin-bottom: 10px;
+			}
+
+			a {
+				color: white;
+				text-decoration: none;
+				font-size: 12px;
+				transition: opacity 0.3s ease;
+
+				@include tablet {
+					font-size: 13px;
+				}
+
+				@include desktop {
+					font-size: 14px;
+
+					&:hover {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+	}
+
+	.social-links {
+		display: flex;
+		gap: 16px;
+
+		@include desktop {
+			gap: 20px;
+		}
+
+		a {
+			color: white;
+			text-decoration: none;
+			font-size: 18px;
+			transition: all 0.3s ease;
+
+			@include desktop {
+				font-size: 20px;
+
+				&:hover {
+					transform: scale(1.2);
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+
+	.footer-divider {
+		border: none;
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		margin: 30px 0;
+
+		@include tablet {
+			margin: 40px 0;
+		}
+
+		@include desktop {
+			margin: 50px 0;
+		}
+	}
+
+	.footer-bottom {
+		font-size: 12px;
+		opacity: 0.7;
+
+		@include tablet {
+			font-size: 13px;
+		}
+
+		@include desktop {
+			font-size: 14px;
+		}
+	}
+}
+
+// ==================== ANIMATIONS ====================
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-40px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(40px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInTop {
+	from {
+		opacity: 0;
+		transform: translateY(-40px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInBottom {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateX(-50%) translateY(0);
+	}
+
+	50% {
+		transform: translateX(-50%) translateY(-10px);
+	}
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+}
+
+// ==================== PRINT STYLES ====================
+
+@media print {
+	.navbar-minimal,
+	.footer-section,
+	.scroll-indicator {
+		display: none;
+	}
+
+	body {
+		font-size: 12pt;
+		color: black;
+		background: white;
+	}
+
+	a {
+		color: black;
+		text-decoration: none;
+	}
+}
+

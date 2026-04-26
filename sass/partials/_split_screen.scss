@@ -1,0 +1,419 @@
+// ==================== SPLIT SCREEN SECTION ====================
+
+@use 'variables' as *;
+@use 'mixin' as *;
+
+.split-screen-section {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	background: white;
+
+	@include only-mobile {
+		min-height: auto;
+	}
+}
+
+.split-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 100vh;
+
+	@include only-mobile {
+		grid-template-columns: 1fr;
+		height: auto;
+		min-height: 70vh;
+	}
+
+	@include tablet {
+		grid-template-columns: 1fr 1fr;
+		height: 100vh;
+	}
+}
+
+.split-panel {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 50vh;
+
+	@include tablet {
+		min-height: 100vh;
+	}
+
+	.split-background {
+		position: absolute;
+		inset: 0;
+		background-size: cover;
+		background-position: center;
+		z-index: 1;
+		transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.split-overlay {
+		position: absolute;
+		inset: 0;
+		background: transparent;
+		z-index: 2;
+		transition: background 0.8s ease;
+	}
+
+	.split-content {
+		position: relative;
+		z-index: 3;
+		padding: 40px;
+		color: $violeta;
+		text-align: center;
+		opacity: 1;
+		transform: scale(1);
+		transition: all 0.6s ease;
+
+		@include small-mobile {
+			padding: 24px;
+		}
+
+		@include tablet {
+			padding: 50px;
+		}
+
+		@include desktop {
+			padding: 60px;
+		}
+
+		.split-title {
+			font-size: 32px;
+			font-weight: $bold;
+			margin-bottom: 20px;
+			font-family: $h;
+			transition: all 0.6s ease;
+
+			@include small-mobile {
+				font-size: 24px;
+				margin-bottom: 12px;
+			}
+
+			@include tablet {
+				font-size: 40px;
+				margin-bottom: 25px;
+			}
+
+			@include desktop {
+				font-size: 48px;
+				margin-bottom: 30px;
+			}
+		}
+
+		.split-description {
+			font-size: 14px;
+			line-height: 1.8;
+			margin-bottom: 25px;
+			opacity: 0.95;
+			font-family: $p;
+			max-width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+            color: $violeta;
+
+			@include small-mobile {
+				font-size: 13px;
+				margin-bottom: 18px;
+				max-width: 90%;
+			}
+
+			@include tablet {
+				font-size: 15px;
+				margin-bottom: 24px;
+				max-width: 450px;
+			}
+
+			@include desktop {
+				font-size: 16px;
+				margin-bottom: 30px;
+				max-width: 500px;
+			}
+		}
+
+		.split-skills {
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-bottom: 30px;
+
+			@include small-mobile {
+				gap: 8px;
+				margin-bottom: 20px;
+			}
+
+			@include tablet {
+				margin-bottom: 30px;
+			}
+
+			@include desktop {
+				margin-bottom: 40px;
+			}
+
+			.skill-tag {
+				display: inline-block;
+				background: rgba(255, 255, 255, 0.15);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				padding: 6px 14px;
+				border-radius: 20px;
+				font-size: 11px;
+				font-weight: $semibold;
+				backdrop-filter: blur(5px);
+				transition: all 0.3s ease;
+
+				@include tablet {
+					padding: 8px 16px;
+					font-size: 12px;
+				}
+
+				@include desktop {
+					padding: 8px 18px;
+					font-size: 12px;
+
+					&:hover {
+						background: rgba(255, 255, 255, 0.25);
+						border-color: rgba(255, 255, 255, 0.5);
+						transform: translateY(-2px);
+					}
+				}
+			}
+		}
+
+		.split-cta {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			color: $grisaceo;
+			text-decoration: none;
+			font-size: 13px;
+			font-weight: $semibold;
+			border: 2px solid $violeta;
+			padding: 10px 20px;
+			border-radius: 6px;
+			transition: all 0.3s ease;
+			font-family: $h;
+
+			@include tablet {
+				font-size: 14px;
+				padding: 12px 24px;
+			}
+
+			@include desktop {
+				font-size: 15px;
+				padding: 12px 28px;
+
+				&:hover {
+					background: white;
+					color: $violeta;
+					transform: translateY(-2px);
+
+					i {
+						transform: translateX(4px);
+					}
+				}
+			}
+
+			i {
+				font-size: 12px;
+				transition: transform 0.3s ease;
+			}
+		}
+	}
+
+	// ESTADOS INICIALES
+	&.split-left {
+		grid-column: 1;
+
+		@include only-mobile {
+			grid-column: 1 / -1;
+			min-height: 50vh;
+		}
+
+		@include desktop {
+			.split-overlay {
+				background: transparent;
+			}
+		}
+	}
+
+	&.split-right {
+		grid-column: 2;
+
+		@include only-mobile {
+			grid-column: 1 / -1;
+			min-height: 50vh;
+		}
+
+		@include desktop {
+			.split-overlay {
+				background: transparent;
+			}
+		}
+	}
+
+	// HOVER EFFECTS - Solo en desktop
+	@include desktop {
+		&:hover {
+			.split-background {
+				transform: scale(1.05);
+			}
+
+			.split-content {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+		&.split-left {
+			flex: 1;
+
+			&:hover {
+				color: white;
+				flex: 1.3;
+				z-index: 10;
+
+				.split-overlay {
+					background: transparent;
+				}
+
+				.split-content {
+					opacity: 1;
+					transform: scale(1);
+				}
+
+				+ .split-right {
+					flex: 0.7;
+					opacity: 0.7;
+
+					.split-overlay {
+						background: transparent;
+					}
+
+					.split-content {
+						opacity: 0.3;
+						transform: scale(0.8);
+					}
+				}
+			}
+		}
+
+		&.split-right {
+			flex: 1;
+
+			&:hover {
+				color: white;
+				flex: 1.3;
+				z-index: 10;
+
+				.split-overlay {
+					background: transparent;
+				}
+
+				.split-content {
+					opacity: 1;
+					transform: scale(1);
+				}
+
+				~ .split-left {
+					flex: 0.7;
+					opacity: 0.7;
+
+					.split-overlay {
+						background: transparent;
+					}
+
+					.split-content {
+						opacity: 0.3;
+						transform: scale(0.8);
+					}
+				}
+			}
+		}
+	}
+}
+
+// MOBILE STYLES
+@include only-mobile {
+	.split-panel {
+		.split-content {
+			.split-title {
+				font-size: 20px;
+			}
+
+			.split-description {
+				font-size: 12px;
+				opacity: 0.9;
+			}
+
+			.split-skills {
+				.skill-tag {
+					font-size: 10px;
+					padding: 4px 10px;
+				}
+			}
+
+			.split-cta {
+				font-size: 12px;
+				padding: 8px 16px;
+			}
+		}
+	}
+}
+
+// TABLET STYLES
+@include tablet {
+	.split-container {
+		height: 100vh;
+	}
+
+	.split-panel {
+		min-height: 100vh;
+
+		.split-content {
+			padding: 40px;
+		}
+	}
+}
+
+// ANIMATIONS
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-40px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(40px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+// Agregar animación de entrada
+.split-left {
+	animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+.split-right {
+	animation: slideInRight 0.8s ease-out 0.4s both;
+}
+

@@ -1,0 +1,487 @@
+/* ==================== EFECTOS CSS ====================
+   Estilos para efectos JavaScript */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* ==================== CUSTOM CURSOR ====================*/
+
+:root {
+	--cursor-color: #A06868;
+	--cursor-size: 20px;
+	--cursor-size-active: 40px;
+}
+
+.cursor-dot {
+	position: fixed;
+	width: 8px;
+	height: 8px;
+	background: var(--cursor-color);
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 9999;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	transform: translate(-50%, -50%);
+	mix-blend-mode: multiply;
+}
+
+.cursor-circle {
+	position: fixed;
+	width: var(--cursor-size);
+	height: var(--cursor-size);
+	border: 2px solid var(--cursor-color);
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 9999;
+	opacity: 0.5;
+	transition: opacity 0.3s ease;
+	transform: translate(-50%, -50%);
+}
+
+.cursor-circle.active {
+	width: var(--cursor-size-active);
+	height: var(--cursor-size-active);
+	opacity: 1;
+	border-color: var(--cursor-color);
+}
+
+/* Solo mostrar cursor personalizado en desktop */
+@media (max-width: 768px) {
+	.cursor-dot,
+	.cursor-circle {
+		display: none;
+	}
+
+	body {
+		cursor: auto;
+	}
+}
+
+/* Ocultar cursor por defecto */
+body {
+	cursor: none;
+}
+
+/* ==================== SCROLL PROGRESS BAR ====================*/
+
+.scroll-progress-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 3px;
+	background: linear-gradient(to right, #A06868, #8B5A5A);
+	border-radius: 0 0 3px 0;
+	width: 0%;
+	z-index: 1000;
+	transition: width 0.1s ease;
+}
+
+/* ==================== BUTTON RIPPLE EFFECT ====================*/
+
+.btn,
+button {
+	position: relative;
+	overflow: hidden;
+}
+
+.ripple {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	pointer-events: none;
+	animation: ripple-animation 0.6s ease-out;
+}
+
+@keyframes ripple-animation {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+
+/* ==================== BACK TO TOP BUTTON ====================*/
+
+.back-to-top {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 50px;
+	height: 50px;
+	background: #A06868;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(20px);
+	transition: all 0.3s ease;
+	z-index: 999;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top.visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.back-to-top:hover {
+	background: #8B5A5A;
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+	.back-to-top {
+		bottom: 20px;
+		right: 20px;
+		width: 45px;
+		height: 45px;
+		font-size: 18px;
+	}
+}
+
+/* ==================== NOTIFICATIONS ====================*/
+
+.notification {
+	position: fixed;
+	bottom: 30px;
+	left: 30px;
+	background: white;
+	padding: 16px 24px;
+	border-radius: 8px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+	z-index: 1001;
+	font-weight: 500;
+	max-width: 300px;
+	opacity: 0;
+	transform: translateX(-400px);
+	transition: all 0.3s ease;
+	border-left: 4px solid #A06868;
+}
+
+.notification.show {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.notification-success {
+	border-left-color: #00A272;
+	color: #00A272;
+}
+
+.notification-error {
+	border-left-color: #DB1318;
+	color: #DB1318;
+}
+
+.notification-warning {
+	border-left-color: #FBBA06;
+	color: #FBBA06;
+}
+
+.notification-info {
+	border-left-color: #A06868;
+	color: #A06868;
+}
+
+@media (max-width: 768px) {
+	.notification {
+		bottom: 20px;
+		left: 20px;
+		right: 20px;
+		max-width: none;
+	}
+}
+
+/* ==================== FORM EFFECTS ====================*/
+
+.form-group {
+	position: relative;
+	margin-bottom: 24px;
+}
+
+.form-group.focused label {
+	color: #A06868;
+	font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+	position: relative;
+	width: 100%;
+	border: 2px solid #f0f0f0;
+	border-radius: 8px;
+	padding: 12px 16px;
+	font-family: 'Inter', sans-serif;
+	font-size: 14px;
+	transition: all 0.3s ease;
+	background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+	border-color: #A06868;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(160, 104, 104, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+	border-color: #DB1318;
+	background-color: rgba(219, 19, 24, 0.05);
+}
+
+.form-group .error-message {
+	color: #DB1318;
+	font-size: 12px;
+	margin-top: 6px;
+	display: none;
+}
+
+/* Floating Label */
+.form-group label {
+	position: absolute;
+	top: 14px;
+	left: 16px;
+	font-size: 14px;
+	color: #ADA6B7;
+	pointer-events: none;
+	transition: all 0.3s ease;
+	background: white;
+	padding: 0 4px;
+}
+
+.form-group.focused label,
+.form-group input:not(:placeholder-shown) ~ label {
+	top: -12px;
+	left: 12px;
+	font-size: 12px;
+	color: #A06868;
+	font-weight: 600;
+}
+
+/* ==================== PAGE TRANSITION ====================*/
+
+.page-transition {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: 9998;
+	animation: page-exit 0.3s ease forwards;
+}
+
+@keyframes page-exit {
+	0% {
+		opacity: 0;
+		transform: scaleX(0);
+		transform-origin: right;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scaleX(1);
+		transform-origin: right;
+	}
+}
+
+/* ==================== MORPHING BUTTONS ====================*/
+
+.btn[data-morph] {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn[data-morph]::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.3);
+	transform: translate(-50%, -50%);
+	transition: width 0.6s, height 0.6s;
+}
+
+.btn[data-morph].morphing::before {
+	width: 300px;
+	height: 300px;
+}
+
+/* ==================== HOVER EFFECTS ====================*/
+
+.work-card,
+.portfolio-card,
+.specialty-card {
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 992px) {
+	.work-card:hover,
+	.portfolio-card:hover,
+	.specialty-card:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+	}
+}
+
+/* ==================== TEXT REVEAL ====================*/
+
+[data-reveal] {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.6s ease-out;
+}
+
+[data-reveal].revealed {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ==================== PARALLAX ====================*/
+
+[data-parallax] {
+	will-change: transform;
+}
+
+/* ==================== LOADING STATE ====================*/
+
+.loading {
+	position: relative;
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+.loading::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	margin: -10px 0 0 -10px;
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #A06868;
+	border-radius: 50%;
+	animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* ==================== SMOOTH TRANSITIONS ====================*/
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* ==================== SELECTION COLOR ====================*/
+
+::selection {
+	background-color: #A06868;
+	color: white;
+}
+
+::-webkit-selection {
+	background-color: #A06868;
+	color: white;
+}
+
+/* ==================== FOCUS VISIBLE ====================*/
+
+*:focus-visible {
+	outline: 2px solid #A06868;
+	outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+	outline-offset: 4px;
+}
+
+/* ==================== ACTIVE STATES ====================*/
+
+a:active {
+	opacity: 0.8;
+}
+
+button:active {
+	transform: scale(0.98);
+}
+
+/* ==================== ACCESSIBILITY ====================*/
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+/* ==================== PLACEHOLDER STYLES ====================*/
+
+input::placeholder,
+textarea::placeholder {
+	color: #ADA6B7;
+	opacity: 0.7;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+	opacity: 0.5;
+}
+
+/* ==================== SCROLLBAR STYLES ====================*/
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #A06868;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #8B5A5A;
+}
+
+/* Firefox */
+* {
+	scrollbar-color: #A06868 #f5f5f5;
+	scrollbar-width: thin;
+}
