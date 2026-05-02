@@ -258,164 +258,83 @@ p {
   }
 }
 /* CONTIENE EL LOGO PRINCIPAL Y NAV BAR */
-/* LOGO PRINCIPAL */
-.logo_container {
-  display: flex;
-  align-items: center;
-  width: 4%;
-  height: 4%;
-  max-width: 100%;
-}
-.logo_container .logo_navbar {
-  margin-right: 10px;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  align-self: flex-start;
-}
-
-.logo_subtitle {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  color: #55466B;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-
-/*Se utilizó bootstrap para agregar un menú desplegable para la barra 
-de navegacion en mobile*/
-/* NAV BAR */
-/* BOTÓN DE ÍCONO MENÚ (toggler) */
-.custom_toggler {
-  border: none;
-  outline: none;
-  box-shadow: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 32px;
-  height: 32px;
-}
-.custom_toggler:focus, .custom_toggler:active, .custom_toggler:focus-visible {
-  outline: none;
-  box-shadow: none;
-  background-color: transparent;
-}
-
-/* MENÚ DE LINKS EN DESKTOP */
-.custom_collapse {
-  justify-content: flex-end;
-  /* MENÚ DE LINKS DESPLEGABLE EN MOBILE */
-}
-.custom_collapse.show {
-  z-index: 1050;
-  width: 100%;
-  background-color: white;
-  position: relative;
-  border: none;
-  box-shadow: none;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-}
-.custom_collapse .nav_turnos {
-  background-color: #55466B;
-  font-family: "Inter", sans-serif;
-  width: 105px;
-  height: 36px;
-  padding: 8px 20px;
-  border-radius: 19px;
-  color: white;
-  text-decoration: none;
-  justify-self: center;
-  align-items: center;
-}
-
-.container_custom_navbar {
-  display: flex;
-  align-content: flex-end;
-  gap: 5px;
-}
-
+/* ================= NAVBAR ================= */
 .custom-navbar {
   margin-top: 10px;
   background-color: white;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 6px 0; /* 🔥 navbar compacto */
   position: relative;
   z-index: 2;
-  border-bottom: none;
 }
-.custom-navbar ul {
+
+/* ================= LOGO ================= */
+.navbar-brand {
   display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-  margin: 0;
+  align-items: center;
   padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* 🔥 CONTROL REAL DEL LOGO */
+.logo_navbar {
+  height: 80px; /* 🔥 cambiá este valor y ahora SÍ responde */
+  width: auto;
+  display: block;
+}
+
+/* ================= LINKS ================= */
+.navbar-nav {
   align-items: center;
+  gap: 10px;
 }
-.custom-navbar li {
-  margin-left: 10px;
-}
-.custom-navbar li a {
-  background-color: white;
+.navbar-nav .nav-link {
   font-family: "Inter", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
   color: #55466B;
   text-decoration: none;
-  border-radius: 19px;
+  border-radius: 20px;
+  padding: 8px 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
-.custom-navbar li a:hover {
+.navbar-nav .nav-link:hover {
   background-color: #ADA6B7;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  border-radius: 19px;
-  font-weight: bold;
-  color: #213555;
-  text-decoration: none;
-  border-color: solid #ADA6B7;
-  padding: 8px 20px;
+  color: rgb(60.5084745763, 49.8305084746, 76.1694915254);
 }
 
-.nav_turnos {
+/* ================= BOTÓN CONTACTO ================= */
+.btn-contact-nav {
+  border: 1px solid #55466B;
+  border-radius: 50px;
+  padding: 8px 18px !important;
+}
+.btn-contact-nav:hover {
   background-color: #55466B;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  border-radius: 19px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  padding: 8px 20px;
-  border-color: #55466B;
-  align-items: center;
-  justify-content: center;
-}
-.nav_turnos:hover {
-  background-color: #ADA6B7;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  border-radius: 19px;
-  font-weight: bold;
-  color: #55466B;
-  text-decoration: none;
-  border-color: solid #55466B;
+  color: white !important;
 }
 
-.menu_icon {
+/* ================= TOGGLER ================= */
+.custom_toggler {
   border: none;
-  width: 24px;
-  height: 24px;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
 }
-.menu_icon:focus {
-  border: none;
+.custom_toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ================= MOBILE ================= */
+.navbar-collapse.show {
+  background-color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .welcome-message {
@@ -793,6 +712,94 @@ p.footer_derechos_reservados {
   gap: 10px;
 }
 
+/* ================= SECTION ================= */
+.proyecto-detalle {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+/* 🔥 evita superposición */
+.proyecto-detalle .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* clave */
+  gap: 60px;
+}
+
+/* ================= IMAGEN ================= */
+.proyecto_img_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.proyecto-img {
+  width: 100%;
+  max-width: 450px; /* 🔥 bajamos bastante */
+  height: auto;
+  border-radius: 50px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= CONTENIDO ================= */
+.proyecto-content {
+  flex: 1;
+  max-width: 500px; /* 🔥 controla ancho texto */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 🔥 color correcto */
+.proyecto-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #55466B;
+}
+
+/* 🔥 FIX: antes estaba blanco */
+.proyecto-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555; /* 👈 ahora se lee */
+}
+
+/* ================= BOTÓN ================= */
+.btn-proyecto {
+  margin-top: 10px;
+  align-self: flex-start;
+  background-color: #55466B;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-proyecto:hover {
+  background-color: rgb(60.5084745763, 49.8305084746, 76.1694915254);
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .proyecto-detalle .row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .proyecto_img {
+    max-width: 260px;
+  }
+  .proyecto_content {
+    text-align: center;
+    align-items: center;
+  }
+  .btn_proyecto {
+    align-self: center;
+  }
+}
 .split-screen-section {
   position: relative;
   width: 100%;
@@ -1463,7 +1470,7 @@ body {
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .hero-section {
-    height: 90vh;
+    height: 70%;
     min-height: 500px;
   }
 }
@@ -1494,7 +1501,7 @@ body {
 .hero-section .hero-video-wrapper .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(253, 252, 252, 0.944);
 }
 .hero-section .hero-content {
   position: relative;
@@ -3027,5 +3034,3 @@ body {
 }
 
 /*# sourceMappingURL=stylesass.css.map */
-
-
