@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description"
+		content="Diseñadora UX/UI y Desarrolladora Frontend. Fusión de diseño y desarrollo para experiencias digitales minimalistas e impactantes.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Agustina Zamora | Diseño & Desarrollo</title>
+
+	<!-- Tipografía Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+		rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- AOS Animation CSS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<!-- Estilos -->
+	<link rel="stylesheet" href="css/stylesass.css">
+
+</head>
+
+<body>
+	<!-- ==================== NAVEGACIÓN ==================== -->
+	<nav class="navbar navbar-expand-lg navbar-light sticky-top custom-navbar">
+		<div class="container-lg">
+
+			<!-- LOGO -->
+			<a class="navbar-brand" href="index.html">
+				<img src="assets/logo-header.png" alt="Logo Agustina Zamora" class="logo_navbar">
+			</a>
+
+			<!-- BOTÓN MOBILE -->
+			<button class="navbar-toggler custom_toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- LINKS -->
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto align-items-center gap-3">
+					<li class="nav-item">
+						<a class="nav-link" href="#inicio">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./pages/sobre-mi.html">Sobre Mí</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#trabajos">Trabajos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link btn-contact-nav" href="pages/contacto.html">Contacto</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+	<!-- ==================== HERO ==================== -->
+	<section class="hero-section" id="inicio">
+		<div class="hero-container">
+			<!-- Video de fondo -->
+			<div class="hero-video-wrapper">
+				<video autoplay muted loop playsinline class="hero-video">
+					<source src="assets/hero_portfolio.mp4" type="video/mp4">
+					<div class="hero-fallback"></div>
+				</video>
+				<div class="hero-overlay"></div>
+			</div>
+
+			<!-- Contenido del Hero -->
+			<div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+				<div class="welcome-message">
+
+				</div>
+				<h1 class="hero-title">Te doy la bienvenida a mi portfolio</h1>
+				<p class="hero-subtitle">Fusiono UX/UI con desarrollo para darle funcionalidad a los diseños basados en
+					experiencia de usuario.</p>
+				<div class="hero-cta">
+					<a href="pages/trabajos.html" class="btn btn-primary-custom">Ver Trabajos</a>
+					<a href="pages/contacto.html" class="btn btn-outline-custom">Contactemos</a>
+				</div>
+			</div>
+
+			<!-- Scroll indicator -->
+			<div class="scroll-indicator">
+				<span>Desplaza para explorar</span>
+				<i class="fas fa-chevron-down"></i>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================== SPLIT SCREEN ROLES ==================== -->
+	<section class="split-screen-section">
+		<div class="split-container">
+			<!-- LADO IZQUIERDO - DISEÑO WEB -->
+			<div class="split-panel split-left" id="uxuiPanel">
+				<div class="split-background">
+					<img src="assets/Frame 13.png" alt="Diseño UX/UI" class="split-bg-image">
+				</div>
+				<div class="split-overlay"></div>
+
+				<div class="split-content" data-aos="fade-left">
+					<h2 class="split-title">Diseño UX/UI</h2>
+					<p class="split-description">Creo interfaces intuitivas y hermosas que resuelven problemas reales.
+						Mi enfoque: entender a los usuarios, investigar, prototipar y iterar hasta lograr la solución
+						perfecta.</p>
+
+					<div class="split-skills">
+						<span class="skill-tag">Research</span data-aos="fade-left">
+						<span class="skill-tag">Figma</span data-aos="fade-left">
+						<span class="skill-tag">Wireframes</span data-aos="fade-left">
+						<span class="skill-tag">Prototipado</span data-aos="fade-left">
+						<span class="skill-tag">Accesibilidad</span data-aos="fade-left">
+						<span class="skill-tag">Resposive</span data-aos="fade-left">
+					</div>
+
+					<a href="pages/trabajos.html" class="split-cta">Mis proyectos de diseño <i
+							class="fas fa-arrow-right"></i></a>
+				</div>
+			</div>
+
+			<!-- LADO DERECHO - FRONTEND DEVELOPER -->
+			<div class="split-panel split-right" id="devPanel">
+				<div class="split-background">
+					<img src="assets/home-coder.png" alt="Desarrollo Web" class="split-bg-image">
+				</div>
+				<div class="split-overlay"></div>
+
+				<div class="split-content">
+					<h2 class="split-title">Desarrollo Web</h2>
+					<p class="split-description">Desarrollo código limpio, eficiente y escalable. Transformo diseños en
+						aplicaciones web funcionales, responsivas y con excelentes prácticas de performance.</p>
+
+					<div class="split-skills">
+						<span class="skill-tag">HTML/CSS</span>
+						<span class="skill-tag">JavaScript</span>
+						<span class="skill-tag">Responsive</span>
+					</div>
+
+					<a href="pages/trabajos.html" class="split-cta">Mis proyectos web <i
+							class="fas fa-arrow-right"></i></a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================== SECCIÓN SOBRE MÍ ==================== -->
+	<section class="about-section" id="sobre-mi">
+		<div class="container-lg">
+			<div class="row align-items-center gap-5 gap-lg-0">
+				<!-- Imagen -->
+				<div class="col-lg-5" data-aos="fade-right">
+					<div class="about-image">
+						<img src="assets/foto-perfil.jpg" alt="Agustina Zamora" class="img-fluid">
+						<a href="pages/sobre-mi.html" class="btn btn-primary-custom">Conocé más sobre mí</a>
+					</div>
+				</div>
+
+				<!-- Contenido -->
+				<div class="col-lg-7" data-aos="fade-left">
+					<h2 class="section-title">Sobre Mí</h2>
+					<p class="about-text">
+						Soy <strong>Diseñadora UX/UI</strong> y <strong>Desarrolladora Frontend</strong>. Mi enfoque es
+						entender los problemas de los usuarios y construir soluciones digitales que sean hermosas,
+						funcionales e intuitivas.
+					</p>
+					<p class="about-text">
+						Creo que el buen diseño y el buen código van de la mano. Por eso, combino research de usuario,
+						pensamiento de diseño y habilidades técnicas para crear productos que realmente marcan la
+						diferencia.
+					</p>
+
+					<!-- Especialidades -->
+					<div class="row mt-5">
+						<div class="col-md-6 mb-4">
+							<div class="specialty-card">
+								<div class="specialty-icon">
+									<i class="fas fa-pencil-ruler"></i>
+								</div>
+								<h3>Diseño UX/UI</h3>
+								<p>Investigación, wireframes, prototipos y diseño visual de interfaces intuitivas y
+									atractivas.</p>
+							</div>
+						</div>
+						<div class="col-md-6 mb-4">
+							<div class="specialty-card">
+								<div class="specialty-icon">
+									<i class="fas fa-code"></i>
+								</div>
+								<h3>Desarrollo Frontend</h3>
+								<p>HTML, CSS, JavaScript, React. Código limpio que transforma diseños en experiencias
+									funcionales.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================== TRABAJOS DESTACADOS ==================== -->
+	<section class="featured-works-section" id="trabajos">
+		<div class="container-lg">
+			<div class="section-header text-center mb-5" data-aos="fade-up">
+				<h2 class="section-title">Trabajos Destacados</h2>
+				<p class="section-subtitle">Selección de proyectos donde diseño y desarrollo se fusionan</p>
+			</div>
+
+			<!-- Grid de trabajos -->
+			<div class="row g-4">
+				<!-- Proyecto 1 -->
+				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+					<div class="work-card">
+						<div class="work-image">
+							<img src="./assets/proyectos/proyecto-wipeout.png" alt="Proyecto 1">
+							<div class="work-overlay">
+								<div class="overlay-content">
+									<span class="work-category">Diseño app android Wipeout</span>
+								</div>
+							</div>
+						</div>
+						<div class="work-info">
+							<h3>App Wipeoout | Diseño UX/UI</h3>
+
+							<p>
+								App de emergencia para proteger datos personales mediante el cierre rápido de sesiones
+								activas.
+							</p>
+
+							<a href="./pages/proyectos/wipeout.html" class="work-link">Ver proyecto <i
+									class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Proyecto 2 -->
+				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+					<div class="work-card">
+						<div class="work-image">
+							<img src="assets/proyectos/rediseño-macro.png" alt="Proyecto 2">
+							<div class="work-overlay">
+								<div class="overlay-content">
+									<span class="work-category">Diseño UX/UI</span>
+								</div>
+							</div>
+						</div>
+						<div class="work-info">
+							<h3>Rediseño web del Banco Macro | Diseño UX/UI</h3>
+							<p>Descripción breve del proyecto y lo que aprendiste en el proceso.</p>
+							<a href="pages/proyectos/rediseño-macro.html" class="work-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Proyecto 3 -->
+				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+					<div class="work-card">
+						<div class="work-image">
+							<img src="assets/proyectos/proyecto-pasteleria.png" alt="Proyecto 3">
+							<div class="work-overlay">
+								<div class="overlay-content">
+									<span class="work-category">Desarrollo Frontend</span>
+								</div>
+							</div>
+						</div>
+						<div class="work-info">
+							<h3>Desarrollo web de pastelería Martti | Desarrollo Frontend</h3>
+							<p></p>
+							<a href="pages/proyectos/pasteleria-martti.html" class="work-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Proyecto 4 -->
+				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+					<div class="work-card">
+						<div class="work-image">
+							<img src="assets/proyectos/proyecto-lic-sarach.png" alt="Proyecto 4">
+							<div class="work-overlay">
+								<div class="overlay-content">
+									<span class="work-category">UX/UI + Dev</span>
+								</div>
+							</div>
+						</div>
+						<div class="work-info">
+							<h3>Desarrollo web Lic. Melisa Sarach</h3>
+							<p>Descripción breve del proyecto y lo que aprendiste en el proceso.</p>
+							<a href="./pages/proyectos/sitio-lic-sarach.html" class="work-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- CTA a página de trabajos -->
+			<div class="text-center mt-5" data-aos="fade-up">
+				<a href="pages/proyectos/sitio-lic-sarach.html" class="btn btn-outline-custom btn-lg">Ver todos los trabajos</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================== CTA FINAL ==================== -->
+	<section class="final-cta-section">
+		<div class="container-lg text-center" data-aos="fade-up">
+			<h2 class="cta-title">¿Que proyecto tenes en mente?</h2>
+			<p class="cta-subtitle">Hablemos y hagamoslo realidad</p>
+			<a href="pages/contacto.html" class="btn btn-primary-custom btn-lg">Contacta Conmigo</a>
+		</div>
+	</section>
+
+	<!-- ==================== FOOTER ==================== -->
+	<footer class="footer-section">
+		<div class="container-lg">
+			<div class="row mb-5">
+				<div class="col-md-4 mb-4 mb-md-0">
+					<h3 class="footer-title">Agustina Zamora</h3>
+					<p class="footer-subtitle">Diseño & Desarrollo</p>
+				</div>
+				<div class="col-md-4 mb-4 mb-md-0">
+					<h4 class="footer-subtitle-small">Navegación</h4>
+					<ul class="footer-links">
+						<li><a href="#inicio">Inicio</a></li>
+						<li><a href="#sobre-mi">Sobre Mí</a></li>
+						<li><a href="#trabajos">Trabajos</a></li>
+						<li><a href="pages/contacto.html">Contacto</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h4 class="footer-subtitle-small">Sígueme</h4>
+					<div class="social-links">
+						<a href="https://www.linkedin.com/in/agustinaazamora/" aria-label="LinkedIn"><i
+								class="fab fa-linkedin"></i></a>
+						<a href="https://github.com/AGUSTINAGUSTINA" aria-label="GitHub"><i
+								class="fab fa-github"></i></a>
+						<a href="https://wa.me/5493512729694?text=Hola%20Agustina,%20vi%20tu%20portfolio%20y%20quiero%20consultarte%20por%20un%20proyecto"
+							target="_blank">
+							<i class="fab fa-whatsapp"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<hr class="footer-divider">
+			<div class="footer-bottom text-center">
+				<p>&copy; 2024 Agustina Zamora. UX/UI Designer & Frontend Developer</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- AOS-->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<!-- Utilities -->
+	<script src="js/utilities.js"></script>
+
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+
+	<!-- Effects JS -->
+	<script src="js/effects.js"></script>
+
+	<!-- Split Screen JS -->
+	<script src="js/split-screen.js"></script>
+</body>
+
+</html>

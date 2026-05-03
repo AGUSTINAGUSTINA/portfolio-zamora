@@ -187,17 +187,38 @@ body {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		background: #0b0b0b;
 
 		.hero-video {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			filter: saturate(1.05) contrast(1.05);
 		}
 
 		.hero-overlay {
 			position: absolute;
 			inset: 0;
-			background: rgba(253, 252, 252, 0.944);
+			// Overlay tipo "vignette" + banda oscura central (como la referencia)
+			background:
+				// oscurece bordes (izq/der)
+				linear-gradient(90deg,
+					rgba(0, 0, 0, 0.42) 0%,
+					rgba(0, 0, 0, 0.10) 22%,
+					rgba(0, 0, 0, 0.10) 78%,
+					rgba(0, 0, 0, 0.42) 100%),
+				// banda oscura al centro (arriba/abajo más claro)
+				linear-gradient(180deg,
+					rgba(0, 0, 0, 0.08) 0%,
+					rgba(0, 0, 0, 0.58) 52%,
+					rgba(0, 0, 0, 0.10) 100%),
+				// viñeta suave general
+				radial-gradient(ellipse at 50% 50%,
+					rgba(0, 0, 0, 0.10) 0%,
+					rgba(0, 0, 0, 0.55) 70%,
+					rgba(0, 0, 0, 0.65) 100%);
+			mix-blend-mode: multiply;
+			opacity: 0.92;
 		}
 	}
 
@@ -210,6 +231,10 @@ body {
 		text-align: center;
 		color: white;
 		padding: 20px;
+		// asegura que el texto caiga sobre la parte más oscura (banda central)
+		justify-content: center;
+		transform: translateY(-2%);
+		text-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
 
 		@include small-mobile {
 			padding: 16px;
@@ -228,7 +253,7 @@ body {
 			font-weight: $bold;
 			margin-bottom: 15px;
 			line-height: 1.2;
-            color: white;
+			color: white;
 
 			@include small-mobile {
 				font-size: 24px;
@@ -717,114 +742,7 @@ body {
 	}
 }
 
-// ==================== PORTFOLIO PAGE RESPONSIVE ====================
-
-.page-header {
-	@include padding-section;
-	background: linear-gradient(135deg, #f5f5f5, #fafafa);
-	text-align: center;
-
-	.page-title {
-		@include heading-style($size-h1, $bold);
-		margin-bottom: 15px;
-
-		@include small-mobile {
-			font-size: 28px;
-		}
-
-		@include tablet {
-			font-size: 40px;
-		}
-
-		@include desktop {
-			font-size: 52px;
-		}
-	}
-
-	.page-subtitle {
-		@include body-text($size-p, $light);
-		color: $grisaceo;
-		max-width: 600px;
-		margin: 0 auto;
-
-		@include small-mobile {
-			font-size: 13px;
-		}
-
-		@include tablet {
-			font-size: 15px;
-		}
-
-		@include desktop {
-			font-size: 18px;
-		}
-	}
-}
-
-.portfolio-filters-section {
-	padding: 30px 0;
-	border-bottom: 1px solid #f0f0f0;
-
-	@include tablet {
-		padding: 40px 0;
-	}
-
-	@include desktop {
-		padding: 50px 0;
-	}
-
-	.filters-wrapper {
-		display: flex;
-		gap: 12px;
-		justify-content: center;
-		flex-wrap: wrap;
-
-		@include small-mobile {
-			gap: 10px;
-		}
-
-		@include tablet {
-			gap: 15px;
-		}
-
-		@include desktop {
-			gap: 20px;
-		}
-
-		.filter-btn {
-			padding: 8px 16px;
-			border: 2px solid #e0e0e0;
-			background: white;
-			border-radius: 20px;
-			font-size: 12px;
-			font-weight: $semibold;
-			cursor: pointer;
-			transition: all 0.3s ease;
-			color: $violeta;
-
-			@include tablet {
-				padding: 10px 20px;
-				font-size: 13px;
-			}
-
-			@include desktop {
-				padding: 12px 24px;
-				font-size: 14px;
-
-				&:hover {
-					border-color: $acento;
-					color: $acento;
-				}
-			}
-
-			&.active {
-				background: $acento;
-				border-color: $acento;
-				color: white;
-			}
-		}
-	}
-}
+// ==================== PORTFOLIO ====================
 
 .portfolio-section {
 	@include padding-section;
@@ -835,18 +753,13 @@ body {
 		gap: 30px;
 
 		@include tablet {
-			grid-template-columns: 1fr;
-			gap: 35px;
+			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@include large-desktop {
+		@include desktop {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 40px;
 		}
-	}
-
-	.portfolio-item {
-		animation: fadeIn 0.6s ease;
 	}
 
 	.portfolio-card {
@@ -854,167 +767,50 @@ body {
 		border-radius: 12px;
 		overflow: hidden;
 		@include shadow-light;
-		transition: all 0.4s ease;
+		transition: all 0.3s ease;
 
-		@include desktop {
-			&:hover {
-				@include shadow-large;
-
-				.portfolio-overlay {
-					opacity: 1;
-				}
-
-				.portfolio-image img {
-					transform: scale(1.08);
-				}
-			}
+		&:hover {
+			@include shadow-large;
 		}
 
+		// ================= IMAGE =================
 		.portfolio-image {
 			position: relative;
 			overflow: hidden;
-			height: 280px;
-
-			@include small-mobile {
-				height: 220px;
-			}
-
-			@include tablet {
-				height: 320px;
-			}
-
-			@include desktop {
-				height: 360px;
-			}
+			height: 300px;
 
 			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				transition: transform 0.6s ease;
+
+				// 🔥 SOLO BLANCO Y NEGRO
+				filter: grayscale(100%);
+				transition: filter 0.4s ease;
 			}
 
-			.portfolio-overlay {
-				position: absolute;
-				inset: 0;
-				background: rgba(0, 0, 0, 0.65);
-				@include flex-center;
-				flex-direction: column;
-				opacity: 0;
-				transition: opacity 0.4s ease;
-				gap: 20px;
-
-				@include only-mobile {
-					opacity: 0.7;
-				}
-
-				.project-category {
-					display: inline-block;
-					background: $acento;
-					color: white;
-					padding: 6px 14px;
-					border-radius: 20px;
-					font-size: 11px;
-					font-weight: $semibold;
-
-					@include tablet {
-						padding: 8px 16px;
-						font-size: 12px;
-					}
-
-					@include desktop {
-						padding: 10px 18px;
-						font-size: 13px;
-					}
-				}
-
-				.view-project-btn {
-					display: inline-flex;
-					align-items: center;
-					gap: 8px;
-					color: white;
-					background: transparent;
-					border: 2px solid white;
-					padding: 8px 16px;
-					border-radius: 6px;
-					font-size: 12px;
-					font-weight: $semibold;
-					cursor: pointer;
-					transition: all 0.3s ease;
-
-					@include tablet {
-						font-size: 13px;
-						padding: 10px 18px;
-					}
-
-					@include desktop {
-						font-size: 14px;
-						padding: 10px 20px;
-
-						&:hover {
-							background: white;
-							color: $acento;
-						}
-					}
-
-					i {
-						font-size: 12px;
-						transition: transform 0.3s ease;
-					}
-
-					&:hover i {
-						transform: translateX(4px);
-					}
-				}
+			// 🔥 HOVER → COLOR ORIGINAL
+			&:hover img {
+				filter: grayscale(0%);
 			}
 		}
 
+		// ================= INFO =================
 		.portfolio-info {
-			padding: 20px;
-
-			@include tablet {
-				padding: 24px;
-			}
-
-			@include desktop {
-				padding: 28px;
-			}
+			position: relative;
+			padding: 20px 50px 20px 20px; // espacio para flecha
 
 			h3 {
-				font-size: 16px;
+				font-size: 18px;
 				font-weight: $semibold;
 				margin-bottom: 10px;
-
-				@include small-mobile {
-					font-size: 14px;
-				}
-
-				@include tablet {
-					font-size: 18px;
-				}
-
-				@include desktop {
-					font-size: 20px;
-				}
 			}
 
 			p {
-				font-size: 12px;
+				font-size: 14px;
 				color: $grisaceo;
 				margin-bottom: 15px;
 				line-height: 1.6;
-
-				@include small-mobile {
-					font-size: 11px;
-				}
-
-				@include tablet {
-					font-size: 13px;
-				}
-
-				@include desktop {
-					font-size: 14px;
-				}
 			}
 
 			.project-tags {
@@ -1023,25 +819,64 @@ body {
 				flex-wrap: wrap;
 
 				.tag {
-					display: inline-block;
 					background: #f0f0f0;
 					color: $violeta;
-					padding: 4px 10px;
-					border-radius: 4px;
-					font-size: 10px;
+					padding: 5px 12px;
+					border-radius: 6px;
+					font-size: 11px;
 					font-weight: $semibold;
-
-					@include tablet {
-						padding: 6px 12px;
-						font-size: 11px;
-					}
-
-					@include desktop {
-						padding: 6px 14px;
-						font-size: 12px;
-					}
 				}
 			}
+
+			// 🔥 FLECHA SIMPLE (solo punta)
+			.portfolio-arrow {
+				position: absolute;
+				right: 18px;
+				bottom: 20px;
+				font-size: 22px;
+				color: $grisaceo; // 👈 gris
+				text-decoration: none;
+				transition: transform 0.2s ease, color 0.2s ease;
+			}
+
+			// opcional: hover sutil (no obligatorio)
+			.portfolio-card:hover .portfolio-arrow {
+				transform: translateX(4px);
+				color: #BC8A97; // 👈 acento solo en hover
+			}
+		}
+	}
+}
+
+
+// ==================== FILTROS ====================
+
+.portfolio-filters-section {
+
+	.filter-btn {
+		padding: 10px 18px;
+		border: 2px solid #e0e0e0;
+		background: white;
+		border-radius: 20px;
+		font-size: 13px;
+		font-weight: $semibold;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		// 🔥 COLOR BASE
+		color: $grisaceo;
+
+		// 🔥 HOVER
+		&:hover {
+			color: #BC8A97;
+			border-color: #BC8A97;
+		}
+
+		// 🔥 ACTIVO
+		&.active {
+			background: #BC8A97;
+			border-color: #BC8A97;
+			color: white;
 		}
 	}
 }
@@ -1544,6 +1379,7 @@ body {
 }
 
 @keyframes bounce {
+
 	0%,
 	100% {
 		transform: translateX(-50%) translateY(0);
@@ -1555,6 +1391,7 @@ body {
 }
 
 @keyframes pulse {
+
 	0%,
 	100% {
 		opacity: 1;
@@ -1565,9 +1402,76 @@ body {
 	}
 }
 
+// ==================== HERO OVERLAY OVERRIDES ====================
+// Ajuste para que el overlay tenga fade blanco arriba/abajo (como referencia)
+.hero-section {
+	.hero-video-wrapper {
+		.hero-overlay {
+			background:
+				linear-gradient(180deg,
+					rgba(255, 255, 255, 0.92) 0%,
+					rgba(255, 255, 255, 0.55) 14%,
+					rgba(255, 255, 255, 0.12) 34%,
+					rgba(255, 255, 255, 0.12) 66%,
+					rgba(255, 255, 255, 0.55) 86%,
+					rgba(255, 255, 255, 0.92) 100%),
+				linear-gradient(180deg,
+					rgba(0, 0, 0, 0.00) 0%,
+					rgba(0, 0, 0, 0.18) 40%,
+					rgba(0, 0, 0, 0.52) 60%,
+					rgba(0, 0, 0, 0.18) 78%,
+					rgba(0, 0, 0, 0.00) 100%),
+				linear-gradient(90deg,
+					rgba(0, 0, 0, 0.10) 0%,
+					rgba(0, 0, 0, 0.00) 22%,
+					rgba(0, 0, 0, 0.00) 78%,
+					rgba(0, 0, 0, 0.10) 100%);
+			mix-blend-mode: normal;
+			opacity: 1;
+		}
+
+		.hero-video {
+			filter: saturate(1.02) contrast(1.02);
+		}
+	}
+
+	.hero-content {
+		// baja el bloque para que coincida con la zona más oscura del overlay
+		transform: translateY(clamp(72px, 14vh, 220px));
+	}
+
+	.hero-cta {
+		.btn {
+			border-radius: 999px;
+		}
+
+		.btn-primary-custom,
+		.btn-outline-custom {
+			background-color: #BC8A97 !important;
+			border-color: #BC8A97 !important;
+			color: #ffffff !important;
+		}
+
+		.btn-primary-custom:hover,
+		.btn-outline-custom:hover {
+			filter: brightness(0.95);
+			transform: translateY(-2px);
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.hero-section {
+		.hero-content {
+			transform: translateY(54px);
+		}
+	}
+}
+
 // ==================== PRINT STYLES ====================
 
 @media print {
+
 	.navbar-minimal,
 	.footer-section,
 	.scroll-indicator {
@@ -1585,4 +1489,3 @@ body {
 		text-decoration: none;
 	}
 }
-

@@ -4,165 +4,230 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description"
-		content="Todos mis trabajos como diseñadora UX/UI y desarrolladora frontend. Proyectos minimalistas y funcionales.">
+		content="Diseñadora UX/UI y Desarrolladora Frontend. Fusión de diseño y desarrollo para experiencias digitales minimalistas e impactantes.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Trabajos | Agustina Zamora</title>
-	
+
 	<!-- Tipografía Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-	
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+		rel="stylesheet">
+
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	
+
 	<!-- AOS Animation CSS -->
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	
+
 	<!-- Font Awesome Icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	
+
 	<!-- Estilos -->
 	<link rel="stylesheet" href="../css/stylesass.css">
 </head>
 
 <body>
-	<!-- ==================== NAVEGACIÓN ==================== -->
-	<nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-minimal">
-		<div class="container-lg">
-			<a class="navbar-brand fw-bold" href="../index.html">
-				<span class="brand-name">AGUSTINA</span>
-				<span class="brand-subtitle">Diseño & Dev</span>
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto align-items-center gap-3">
-					<li class="nav-item">
-						<a class="nav-link" href="../index.html#inicio">Inicio</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../index.html#sobre-mi">Sobre Mí</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../index.html#trabajos">Trabajos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link btn-contact-nav" href="contacto.html">Contacto</a>
-					</li>
-				</ul>
+	<header>
+		<!-- ==================== NAVEGACIÓN ==================== -->
+		<nav class="navbar navbar-expand-lg navbar-light sticky-top custom-navbar">
+			<div class="container-lg">
+
+				<!-- LOGO -->
+				<a class="navbar-brand" href="../../index.html">
+					<img src="../assets/logo-header.png" alt="Logo Agustina Zamora" class="logo_navbar">
+				</a>
+
+				<!-- BOTÓN MOBILE -->
+				<button class="navbar-toggler custom_toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<!-- LINKS -->
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto align-items-center gap-3">
+						<li class="nav-item">
+							<a class="nav-link" href="../../index.html">Inicio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../../pages/sobre-mi.html">Sobre Mí</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../../index.html#trabajos">Trabajos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link btn-contact-nav" href="../../pages/contacto.html">Contacto</a>
+						</li>
+					</ul>
+				</div>
+
 			</div>
-		</div>
-	</nav>
-
-	<!-- ==================== HEADER ==================== -->
-	<section class="page-header">
-		<div class="container-lg text-center" data-aos="fade-up">
-			<h1 class="page-title">Mis Trabajos</h1>
-			<p class="page-subtitle">Proyectos donde diseño y desarrollo se fusionan para crear experiencias minimalistas e impactantes</p>
-		</div>
-	</section>
-
-	<!-- ==================== FILTROS ==================== -->
-	<section class="portfolio-filters-section">
-		<div class="container-lg text-center">
-			<div class="filters-wrapper">
-				<button class="filter-btn active" data-filter="*">Todos</button>
-				<button class="filter-btn" data-filter=".ux-ui">Diseño UX/UI</button>
-				<button class="filter-btn" data-filter=".frontend">Desarrollo Frontend</button>
-				<button class="filter-btn" data-filter=".fusion">Diseño + Dev</button>
+		</nav>
+		<!-- ==================== HEADER ==================== -->
+		<section class="page-header">
+			<div class="container-lg text-center" data-aos="fade-up">
+				<h1 class="page-title">
+					Diseñando y desarrollando experiencias digitales de alto impacto
+					<span class="typing-dots"></span>
+				</h1>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- ==================== GRID DE TRABAJOS ==================== -->
-	<section class="portfolio-section">
-		<div class="container-lg">
-			<div class="portfolio-grid">
-				<!-- Proyecto 1: UX/UI -->
-				<div class="portfolio-item ux-ui" data-aos="fade-up" data-aos-delay="100">
-					<div class="portfolio-card">
-						<div class="portfolio-image">
-							<img src="../assets/proyecto-1.jpg" alt="Proyecto 1">
-							<div class="portfolio-overlay">
-								<span class="project-category">Diseño UX/UI</span>
-								<a href="#" class="view-project-btn">Ver Proyecto <i class="fas fa-arrow-right"></i></a>
+		<!-- ==================== FILTROS ==================== -->
+		<section class="portfolio-filters-section">
+			<div class="container-lg text-center">
+				<div class="filters-wrapper">
+					<button class="filter-btn active" data-filter="*">Todos</button>
+					<button class="filter-btn" data-filter=".ux-ui">Diseño UX/UI</button>
+					<button class="filter-btn" data-filter=".frontend">Desarrollo Frontend</button>
+					<button class="filter-btn" data-filter=".fusion">Diseño + Dev</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- ==================== GRID DE TRABAJOS ==================== -->
+		<section class="portfolio-section">
+			<div class="container-lg">
+				<div class="portfolio-grid">
+					<!-- Proyecto 1: UX/UI -->
+					<div class="portfolio-item ux-ui" data-aos="fade-up" data-aos-delay="100">
+						<div class="portfolio-card">
+							<div class="portfolio-image">
+								<img src="../assets/proyectos/proyecto-wipeout.png" alt="Proyecto 1">
+								<div class="portfolio-overlay">
+									<span class="project-category">Diseño UX/UI</span>
+									<a href="../pages/proyectos/wipeout.html" class="portfolio-arrow">>
+
+									</a>
+
+								</div>
+							</div>
+							<div class="portfolio-info">
+								<div class="portfolio-info-content">
+									<h3>Wipeout</h3>
+									<p>App de emergencia para proteger datos personales mediante el cierre rápido de
+										sesiones activas.</p>
+
+									<div class="project-tags">
+										<span class="tag">Research</span>
+										<span class="tag">Wireframes</span>
+										<span class="tag">Figma</span>
+										<span class="tag">Optimal Workshop</span>
+										<span class="tag">Pruebas de Usabilidad</span>
+										<span class="tag">Prototipado</span>
+									</div>
+								</div>
+
+								<a href="../pages/proyectos/wipeout.html" class="portfolio-arrow">></a>
 							</div>
 						</div>
-						<div class="portfolio-info">
-							<h3>Proyecto 1: Nombre del Proyecto</h3>
-							<p>Descripción breve de lo que hiciste: investigación, wireframes, prototipo interactivo, sistema de diseño.</p>
-							<div class="project-tags">
-								<span class="tag">Research</span>
-								<span class="tag">Wireframes</span>
-								<span class="tag">Figma</span>
+
+
+
+						<!-- Proyecto 2: Frontend -->
+						<div class="portfolio-item ux-ui" data-aos="fade-up" data-aos-delay="100">
+							<div class="portfolio-card">
+								<div class="portfolio-image">
+									<img src="../assets/proyectos/proyecto-lic-sarach.png" alt="Proyecto 1">
+									<div class="portfolio-overlay">
+										<span class="project-category">Diseño UX/UI & Desarrollo Frontend</span>
+										<a href="../pages/proyectos/sitio-lic-sarach.html" class="portfolio-arrow">
+
+										</a>
+
+									</div>
+								</div>
+								<div class="portfolio-info">
+									<div class="portfolio-info-content">
+										<h3>Sitio web de Lic. Melisa Sarach</h3>
+										<p>Landing profesional que presenta un enfoque integral de la nutrición,
+											combinando asesoramiento, coaching y terapias complementarias..</p>
+
+										<div class="project-tags">
+											<span class="tag">Figma</span>
+											<span class="tag">Wireframes</span>
+											<span class="tag">Visual Studio Code</span>
+											<span class="tag">HTMLS</span>
+											<span class="tag">CSS</span>
+											<span class="tag">JavaScript</span>
+											<span class="tag">Github</span>
+										</div>
+									</div>
+
+									<a href="../pages/proyectos/sitio-lic-sarach.html" class="portfolio-arrow">></a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<!-- Proyecto 2: Frontend -->
-				<div class="portfolio-item frontend" data-aos="fade-up" data-aos-delay="150">
-					<div class="portfolio-card">
-						<div class="portfolio-image">
-							<img src="../assets/proyecto-2.jpg" alt="Proyecto 2">
-							<div class="portfolio-overlay">
-								<span class="project-category">Desarrollo Frontend</span>
-								<a href="#" class="view-project-btn">Ver Proyecto <i class="fas fa-arrow-right"></i></a>
-							</div>
-						</div>
-						<div class="portfolio-info">
-							<h3>Proyecto 2: Sitio Web Responsivo</h3>
-							<p>Desarrollo de un sitio web desde cero con HTML, CSS, JavaScript. Optimizado para todos los dispositivos.</p>
-							<div class="project-tags">
-								<span class="tag">HTML</span>
-								<span class="tag">CSS</span>
-								<span class="tag">JavaScript</span>
-							</div>
-						</div>
-					</div>
-				</div>
+					<!-- Proyecto 3: Fusión -->
 
-				<!-- Proyecto 3: Fusión -->
-				<div class="portfolio-item fusion" data-aos="fade-up" data-aos-delay="200">
-					<div class="portfolio-card">
-						<div class="portfolio-image">
-							<img src="../assets/proyecto-3.jpg" alt="Proyecto 3">
-							<div class="portfolio-overlay">
-								<span class="project-category">Diseño + Desarrollo</span>
-								<a href="#" class="view-project-btn">Ver Proyecto <i class="fas fa-arrow-right"></i></a>
+					<div class="portfolio-item ux-ui" data-aos="fade-up" data-aos-delay="100">
+						<div class="portfolio-card">
+							<div class="portfolio-image">
+								<img src="../assets/proyectos/proyecto-pasteleria.png" alt="Proyecto 1">
+								<div class="portfolio-overlay">
+									<span class="project-category">Diseño UX/UI & Desarrollo Frontend</span>
+									<a href="../pages/proyectos/pasteleria-martti.html" class="portfolio-arrow">
+
+									</a>
+
+								</div>
 							</div>
-						</div>
-						<div class="portfolio-info">
-							<h3>Proyecto 3: Aplicación Web Completa</h3>
-							<p>Diseño y desarrollo de una aplicación web funcional. De la idea al código, vea cómo nace un proyecto.</p>
-							<div class="project-tags">
-								<span class="tag">Figma</span>
-								<span class="tag">React</span>
-								<span class="tag">API</span>
+							<div class="portfolio-info">
+								<div class="portfolio-info-content">
+									<h3>Sitio web de la pastelería Martti</h3>
+									<p>Sitio híbrido tipo landing + e-commerce que prioriza la experiencia visual y
+										optimiza el proceso de compra.</p>
+
+									<div class="project-tags">
+										<span class="tag">Figma</span>
+										<span class="tag">Wireframes</span>
+										<span class="tag">Visual Studio Code</span>
+										<span class="tag">HTMLS</span>
+										<span class="tag">CSS</span>
+										<span class="tag">JavaScript</span>
+										<span class="tag">Github</span>
+									</div>
+								</div>
+
+								<a href="../pages/proyectos/pasteleria-martti.html" class="portfolio-arrow">></a>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<!-- Proyecto 4: UX/UI -->
-				<div class="portfolio-item ux-ui" data-aos="fade-up" data-aos-delay="250">
-					<div class="portfolio-card">
-						<div class="portfolio-image">
-							<img src="../assets/proyecto-4.jpg" alt="Proyecto 4">
-							<div class="portfolio-overlay">
-								<span class="project-category">Diseño UX/UI</span>
-								<a href="#" class="view-project-btn">Ver Proyecto <i class="fas fa-arrow-right"></i></a>
+				<div class="portfolio-item ux-ui" data-aos="fade-up" data-aos-delay="100">
+						<div class="portfolio-card">
+							<div class="portfolio-image">
+								<img src="../assets/proyectos/rediseño-macro.png" alt="Proyecto 1">
+								<div class="portfolio-overlay">
+									<span class="project-category">Diseño UX/UI</span>
+									<a href="../pages/proyectos/rediseño-macro.html" class="portfolio-arrow">
+
+									</a>
+
+								</div>
 							</div>
-						</div>
-						<div class="portfolio-info">
-							<h3>Proyecto 4: Rediseño de Aplicación</h3>
-							<p>Rediseño UX/UI basado en testing con usuarios. Mejora de la experiencia y accesibilidad.</p>
-							<div class="project-tags">
-								<span class="tag">UX Testing</span>
-								<span class="tag">Prototipos</span>
-								<span class="tag">Accesibilidad</span>
+							<div class="portfolio-info">
+								<div class="portfolio-info-content">
+									<h3>Rediseño de la aplicación Macro</h3>
+									<p>Rediseño UX/UI basado en testing con usuarios. Mejora de la experiencia y
+										accesibilidad.</p>
+
+									<div class="project-tags">
+										<span class="tag">Figma</span>
+										<span class="tag">Wireframes</span>
+										<span class="tag">Optimal Workshop</span>
+										<span class="tag">Pruebas de Usabilidad</span>
+										<span class="tag">Prototipado</span>
+									</div>
+								</div>
+
+								<a href="../pages/proyectos/rediseño-macro.html" class="portfolio-arrow">></a>
 							</div>
 						</div>
 					</div>
@@ -180,7 +245,8 @@
 						</div>
 						<div class="portfolio-info">
 							<h3>Proyecto 5: Ecommerce Frontend</h3>
-							<p>Desarrollo del frontend de una plataforma de ecommerce con React, integraciones de API, carrito de compras.</p>
+							<p>Desarrollo del frontend de una plataforma de ecommerce con React, integraciones de
+								API, carrito de compras.</p>
 							<div class="project-tags">
 								<span class="tag">React</span>
 								<span class="tag">Redux</span>
@@ -202,7 +268,8 @@
 						</div>
 						<div class="portfolio-info">
 							<h3>Proyecto 6: Sistema de Diseño</h3>
-							<p>Creación de un sistema de diseño completo incluyendo componentes, documentación y libreríaFrontend.</p>
+							<p>Creación de un sistema de diseño completo incluyendo componentes, documentación y
+								libreríaFrontend.</p>
 							<div class="project-tags">
 								<span class="tag">Design System</span>
 								<span class="tag">Figma</span>
@@ -224,7 +291,8 @@
 						</div>
 						<div class="portfolio-info">
 							<h3>Proyecto 7: Diseño Responsivo</h3>
-							<p>Diseño de interfaz responsiva para aplicación móvil y web. Enfoque en usabilidad y accesibilidad.</p>
+							<p>Diseño de interfaz responsiva para aplicación móvil y web. Enfoque en usabilidad y
+								accesibilidad.</p>
 							<div class="project-tags">
 								<span class="tag">Responsive</span>
 								<span class="tag">Mobile First</span>
@@ -246,7 +314,8 @@
 						</div>
 						<div class="portfolio-info">
 							<h3>Proyecto 8: Dashboard Interactivo</h3>
-							<p>Desarrollo de un dashboard con visualización de datos, gráficos interactivos y análisis en tiempo real.</p>
+							<p>Desarrollo de un dashboard con visualización de datos, gráficos interactivos y
+								análisis en tiempo real.</p>
 							<div class="project-tags">
 								<span class="tag">React</span>
 								<span class="tag">Chart.js</span>
@@ -256,91 +325,92 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+			</div>
+		</section>
 
-	<!-- ==================== CTA FINAL ==================== -->
-	<section class="final-cta-section">
-		<div class="container-lg text-center" data-aos="fade-up">
-			<h2 class="cta-title">¿Interesado en colaborar?</h2>
-			<p class="cta-subtitle">Me encantaría conocer tu proyecto y ayudarte a hacerlo realidad</p>
-			<a href="contacto.html" class="btn btn-primary-custom btn-lg">Hablemos</a>
-		</div>
-	</section>
+		<!-- ==================== CTA FINAL ==================== -->
+		<section class="final-cta-section">
+			<div class="container-lg text-center" data-aos="fade-up">
+				<h2 class="cta-title">¿Interesado en colaborar?</h2>
+				<p class="cta-subtitle">Me encantaría conocer tu proyecto y ayudarte a hacerlo realidad</p>
+				<a href="contacto.html" class="btn btn-primary-custom btn-lg">Hablemos</a>
+			</div>
+		</section>
 
-	<!-- ==================== FOOTER ==================== -->
-	<footer class="footer-section">
-		<div class="container-lg">
-			<div class="row mb-5">
-				<div class="col-md-4 mb-4 mb-md-0">
-					<h3 class="footer-title">Agustina Zamora</h3>
-					<p class="footer-subtitle">Diseño & Desarrollo</p>
-				</div>
-				<div class="col-md-4 mb-4 mb-md-0">
-					<h4 class="footer-subtitle-small">Navegación</h4>
-					<ul class="footer-links">
-						<li><a href="../index.html">Inicio</a></li>
-						<li><a href="../index.html#sobre-mi">Sobre Mí</a></li>
-						<li><a href="trabajos.html">Trabajos</a></li>
-						<li><a href="contacto.html">Contacto</a></li>
-					</ul>
-				</div>
-				<div class="col-md-4">
-					<h4 class="footer-subtitle-small">Sígueme</h4>
-					<div class="social-links">
-						<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-						<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-						<a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-						<a href="https://wa.me/YOUR_NUMBER" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+		<!-- ==================== FOOTER ==================== -->
+		<footer class="footer-section">
+			<div class="container-lg">
+				<div class="row mb-5">
+					<div class="col-md-4 mb-4 mb-md-0">
+						<h3 class="footer-title">Agustina Zamora</h3>
+						<p class="footer-subtitle">Diseño & Desarrollo</p>
+					</div>
+					<div class="col-md-4 mb-4 mb-md-0">
+						<h4 class="footer-subtitle-small">Navegación</h4>
+						<ul class="footer-links">
+							<li><a href="../index.html">Inicio</a></li>
+							<li><a href="../index.html#sobre-mi">Sobre Mí</a></li>
+							<li><a href="trabajos.html">Trabajos</a></li>
+							<li><a href="contacto.html">Contacto</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h4 class="footer-subtitle-small">Sígueme</h4>
+						<div class="social-links">
+							<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+							<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+							<a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+							<a href="https://wa.me/YOUR_NUMBER" aria-label="WhatsApp"><i
+									class="fab fa-whatsapp"></i></a>
+						</div>
 					</div>
 				</div>
+				<hr class="footer-divider">
+				<div class="footer-bottom text-center">
+					<p>&copy; 2024 Agustina Zamora. Diseñado y desarrollado con ❤️</p>
+				</div>
 			</div>
-			<hr class="footer-divider">
-			<div class="footer-bottom text-center">
-				<p>&copy; 2024 Agustina Zamora. Diseñado y desarrollado con ❤️</p>
-			</div>
-		</div>
-	</footer>
+		</footer>
 
-	<!-- Bootstrap JS -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-	
-	<!-- AOS JS -->
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	
-	<!-- Isotope para filtrado -->
-	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	
-	<script>
-		// Inicializar AOS
-		AOS.init({
-			duration: 800,
-			easing: 'ease-in-out-quart',
-			once: true
-		});
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-		// Inicializar Isotope
-		document.addEventListener('DOMContentLoaded', function() {
-			let iso = new Isotope('.portfolio-grid', {
-				itemSelector: '.portfolio-item',
-				layoutMode: 'masonry'
+		<!-- AOS JS -->
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+		<!-- Isotope para filtrado -->
+		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+		<script>
+			// Inicializar AOS
+			AOS.init({
+				duration: 800,
+				easing: 'ease-in-out-quart',
+				once: true
 			});
 
-			// Filtrado
-			const filterButtons = document.querySelectorAll('.filter-btn');
-			filterButtons.forEach(button => {
-				button.addEventListener('click', function() {
-					// Remover clase active
-					filterButtons.forEach(btn => btn.classList.remove('active'));
-					// Agregar clase active al botón clickeado
-					this.classList.add('active');
-					
-					// Filtrar items
-					iso.arrange({ filter: this.getAttribute('data-filter') });
+			// Inicializar Isotope
+			document.addEventListener('DOMContentLoaded', function () {
+				let iso = new Isotope('.portfolio-grid', {
+					itemSelector: '.portfolio-item',
+					layoutMode: 'masonry'
+				});
+
+				// Filtrado
+				const filterButtons = document.querySelectorAll('.filter-btn');
+				filterButtons.forEach(button => {
+					button.addEventListener('click', function () {
+						// Remover clase active
+						filterButtons.forEach(btn => btn.classList.remove('active'));
+						// Agregar clase active al botón clickeado
+						this.classList.add('active');
+
+						// Filtrar items
+						iso.arrange({ filter: this.getAttribute('data-filter') });
+					});
 				});
 			});
-		});
-	</script>
+		</script>
 </body>
 
 </html>
