@@ -405,6 +405,7 @@ body {
 
 	.about-image {
 		margin-bottom: 30px;
+		text-align: center;
 
 		@include tablet {
 			margin-bottom: 0;
@@ -415,6 +416,10 @@ body {
 			height: auto;
 			border-radius: 12px;
 			@include shadow-medium;
+		}
+
+		a.btn-primary-custom {
+			margin-top: 20px;
 		}
 	}
 

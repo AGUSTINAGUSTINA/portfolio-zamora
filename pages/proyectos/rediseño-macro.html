@@ -6,7 +6,7 @@
 	<meta name="description"
 		content="Diseñadora UX/UI y Desarrolladora Frontend. Fusión de diseño y desarrollo para experiencias digitales minimalistas e impactantes.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Agustina Zamora | Diseño & Desarrollo</title>
+	<title>Proyecto | Rediseño Banco Macro</title>
 
 	<!-- Tipografía Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,354 +25,292 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 	<!-- Estilos -->
-	<link rel="stylesheet" href="css/stylesass.css">
-
+	<link rel="stylesheet" href="../../css/stylesass.css">
 </head>
 
 <body>
-	<!-- ==================== NAVEGACIÓN ==================== -->
-	<nav class="navbar navbar-expand-lg navbar-light sticky-top custom-navbar">
-		<div class="container-lg">
+	<header>
+		<!-- ==================== NAVEGACIÓN ==================== -->
+		<nav class="navbar navbar-expand-lg navbar-light sticky-top custom-navbar">
+			<div class="container-lg">
 
-			<!-- LOGO -->
-			<a class="navbar-brand" href="index.html">
-				<img src="assets/logo-header.png" alt="Logo Agustina Zamora" class="logo_navbar">
-			</a>
+				<!-- LOGO -->
+				<a class="navbar-brand" href="../../index.html">
+					<img src="../../assets/logo-header.png" alt="Logo Agustina Zamora" class="logo_navbar">
+				</a>
 
-			<!-- BOTÓN MOBILE -->
-			<button class="navbar-toggler custom_toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+				<!-- BOTÓN MOBILE -->
+				<button class="navbar-toggler custom_toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-			<!-- LINKS -->
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto align-items-center gap-3">
-					<li class="nav-item">
-						<a class="nav-link" href="#inicio">Inicio</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./pages/sobre-mi.html">Sobre Mí</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#trabajos">Trabajos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link btn-contact-nav" href="pages/contacto.html">Contacto</a>
-					</li>
-				</ul>
-			</div>
-
-		</div>
-	</nav>
-
-	<!-- ==================== HERO ==================== -->
-	<section class="hero-section" id="inicio">
-		<div class="hero-container">
-			<!-- Video de fondo -->
-			<div class="hero-video-wrapper">
-				<video autoplay muted loop playsinline class="hero-video">
-					<source src="assets/hero_portfolio.mp4" type="video/mp4">
-					<div class="hero-fallback"></div>
-				</video>
-				<div class="hero-overlay"></div>
-			</div>
-
-			<!-- Contenido del Hero -->
-			<div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-				<div class="welcome-message">
-
-				</div>
-				<h1 class="hero-title">Te doy la bienvenida a mi portfolio</h1>
-				<p class="hero-subtitle">Fusiono UX/UI con desarrollo para darle funcionalidad a los diseños basados en
-					experiencia de usuario.</p>
-				<div class="hero-cta">
-					<a href="pages/trabajos.html" class="btn btn-primary-custom">Ver Trabajos</a>
-					<a href="pages/contacto.html" class="btn btn-outline-custom">Contactemos</a>
-				</div>
-			</div>
-
-			<!-- Scroll indicator -->
-			<div class="scroll-indicator">
-				<span>Desplaza para explorar</span>
-				<i class="fas fa-chevron-down"></i>
-			</div>
-		</div>
-	</section>
-
-	<!-- ==================== SPLIT SCREEN ROLES ==================== -->
-	<section class="split-screen-section">
-		<div class="split-container">
-			<!-- LADO IZQUIERDO - DISEÑO WEB -->
-			<div class="split-panel split-left" id="uxuiPanel">
-				<div class="split-background">
-					<img src="assets/Frame 13.png" alt="Diseño UX/UI" class="split-bg-image">
-				</div>
-				<div class="split-overlay"></div>
-
-				<div class="split-content" data-aos="fade-left">
-					<h2 class="split-title">Diseño UX/UI</h2>
-					<p class="split-description">Creo interfaces intuitivas y hermosas que resuelven problemas reales.
-						Mi enfoque: entender a los usuarios, investigar, prototipar y iterar hasta lograr la solución
-						perfecta.</p>
-
-					<div class="split-skills">
-						<span class="skill-tag">Research</span data-aos="fade-left">
-						<span class="skill-tag">Figma</span data-aos="fade-left">
-						<span class="skill-tag">Wireframes</span data-aos="fade-left">
-						<span class="skill-tag">Prototipado</span data-aos="fade-left">
-						<span class="skill-tag">Accesibilidad</span data-aos="fade-left">
-						<span class="skill-tag">Resposive</span data-aos="fade-left">
-					</div>
-
-					<a href="pages/trabajos.html" class="split-cta">Mis proyectos de diseño <i
-							class="fas fa-arrow-right"></i></a>
-				</div>
-			</div>
-
-			<!-- LADO DERECHO - FRONTEND DEVELOPER -->
-			<div class="split-panel split-right" id="devPanel">
-				<div class="split-background">
-					<img src="assets/home-coder.png" alt="Desarrollo Web" class="split-bg-image">
-				</div>
-				<div class="split-overlay"></div>
-
-				<div class="split-content">
-					<h2 class="split-title">Desarrollo Web</h2>
-					<p class="split-description">Desarrollo código limpio, eficiente y escalable. Transformo diseños en
-						aplicaciones web funcionales, responsivas y con excelentes prácticas de performance.</p>
-
-					<div class="split-skills">
-						<span class="skill-tag">HTML/CSS</span>
-						<span class="skill-tag">JavaScript</span>
-						<span class="skill-tag">Responsive</span>
-					</div>
-
-					<a href="pages/trabajos.html" class="split-cta">Mis proyectos web <i
-							class="fas fa-arrow-right"></i></a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ==================== SECCIÓN SOBRE MÍ ==================== -->
-	<section class="about-section" id="sobre-mi">
-		<div class="container-lg">
-			<div class="row align-items-center gap-5 gap-lg-0">
-				<!-- Imagen -->
-				<div class="col-lg-5" data-aos="fade-right">
-					<div class="about-image">
-						<img src="assets/foto-perfil.jpg" alt="Agustina Zamora" class="img-fluid">
-						<a href="pages/sobre-mi.html" class="btn btn-primary-custom">Conocé más sobre mí</a>
-					</div>
-				</div>
-
-				<!-- Contenido -->
-				<div class="col-lg-7" data-aos="fade-left">
-					<h2 class="section-title">Sobre Mí</h2>
-					<p class="about-text">
-						Soy <strong>Diseñadora UX/UI</strong> y <strong>Desarrolladora Frontend</strong>. Mi enfoque es
-						entender los problemas de los usuarios y construir soluciones digitales que sean hermosas,
-						funcionales e intuitivas.
-					</p>
-					<p class="about-text">
-						Creo que el buen diseño y el buen código van de la mano. Por eso, combino research de usuario,
-						pensamiento de diseño y habilidades técnicas para crear productos que realmente marcan la
-						diferencia.
-					</p>
-
-					<!-- Especialidades -->
-					<div class="row mt-5">
-						<div class="col-md-6 mb-4">
-							<div class="specialty-card">
-								<div class="specialty-icon">
-									<i class="fas fa-pencil-ruler"></i>
-								</div>
-								<h3>Diseño UX/UI</h3>
-								<p>Investigación, wireframes, prototipos y diseño visual de interfaces intuitivas y
-									atractivas.</p>
-							</div>
-						</div>
-						<div class="col-md-6 mb-4">
-							<div class="specialty-card">
-								<div class="specialty-icon">
-									<i class="fas fa-code"></i>
-								</div>
-								<h3>Desarrollo Frontend</h3>
-								<p>HTML, CSS, JavaScript, React. Código limpio que transforma diseños en experiencias
-									funcionales.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ==================== TRABAJOS DESTACADOS ==================== -->
-	<section class="featured-works-section" id="trabajos">
-		<div class="container-lg">
-			<div class="section-header text-center mb-5" data-aos="fade-up">
-				<h2 class="section-title">Trabajos Destacados</h2>
-				<p class="section-subtitle">Selección de proyectos donde diseño y desarrollo se fusionan</p>
-			</div>
-
-			<!-- Grid de trabajos -->
-			<div class="row g-4">
-				<!-- Proyecto 1 -->
-				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-					<div class="work-card">
-						<div class="work-image">
-							<img src="./assets/proyectos/proyecto-wipeout.png" alt="Proyecto 1">
-							<div class="work-overlay">
-								<div class="overlay-content">
-									<span class="work-category">Diseño app android Wipeout</span>
-								</div>
-							</div>
-						</div>
-						<div class="work-info">
-							<h3>App Wipeoout | Diseño UX/UI</h3>
-
-							<p>
-								App de emergencia para proteger datos personales mediante el cierre rápido de sesiones
-								activas.
-							</p>
-
-							<a href="./pages/proyectos/wipeout.html" class="work-link">Ver proyecto <i
-									class="fas fa-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Proyecto 2 -->
-				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-					<div class="work-card">
-						<div class="work-image">
-							<img src="assets/proyectos/rediseño-macro.png" alt="Proyecto 2">
-							<div class="work-overlay">
-								<div class="overlay-content">
-									<span class="work-category">Diseño UX/UI</span>
-								</div>
-							</div>
-						</div>
-						<div class="work-info">
-							<h3>Rediseño web del Banco Macro | Diseño UX/UI</h3>
-							<p>Descripción breve del proyecto y lo que aprendiste en el proceso.</p>
-							<a href="pages/proyectos/rediseño-macro.html" class="work-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Proyecto 3 -->
-				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-					<div class="work-card">
-						<div class="work-image">
-							<img src="assets/proyectos/proyecto-pasteleria.png" alt="Proyecto 3">
-							<div class="work-overlay">
-								<div class="overlay-content">
-									<span class="work-category">Desarrollo Frontend</span>
-								</div>
-							</div>
-						</div>
-						<div class="work-info">
-							<h3>Desarrollo web de pastelería Martti | Desarrollo Frontend</h3>
-							<p></p>
-							<a href="pages/proyectos/pasteleria-martti.html" class="work-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Proyecto 4 -->
-				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-					<div class="work-card">
-						<div class="work-image">
-							<img src="assets/proyectos/proyecto-lic-sarach.png" alt="Proyecto 4">
-							<div class="work-overlay">
-								<div class="overlay-content">
-									<span class="work-category">UX/UI + Dev</span>
-								</div>
-							</div>
-						</div>
-						<div class="work-info">
-							<h3>Desarrollo web Lic. Melisa Sarach</h3>
-							<p>Descripción breve del proyecto y lo que aprendiste en el proceso.</p>
-							<a href="./pages/proyectos/sitio-lic-sarach.html" class="work-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- CTA a página de trabajos -->
-			<div class="text-center mt-5" data-aos="fade-up">
-				<a href="pages/proyectos/sitio-lic-sarach.html" class="btn btn-outline-custom btn-lg">Ver todos los trabajos</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- ==================== CTA FINAL ==================== -->
-	<section class="final-cta-section">
-		<div class="container-lg text-center" data-aos="fade-up">
-			<h2 class="cta-title">¿Que proyecto tenes en mente?</h2>
-			<p class="cta-subtitle">Hablemos y hagamoslo realidad</p>
-			<a href="pages/contacto.html" class="btn btn-primary-custom btn-lg">Contacta Conmigo</a>
-		</div>
-	</section>
-
-	<!-- ==================== FOOTER ==================== -->
-	<footer class="footer-section">
-		<div class="container-lg">
-			<div class="row mb-5">
-				<div class="col-md-4 mb-4 mb-md-0">
-					<h3 class="footer-title">Agustina Zamora</h3>
-					<p class="footer-subtitle">Diseño & Desarrollo</p>
-				</div>
-				<div class="col-md-4 mb-4 mb-md-0">
-					<h4 class="footer-subtitle-small">Navegación</h4>
-					<ul class="footer-links">
-						<li><a href="#inicio">Inicio</a></li>
-						<li><a href="#sobre-mi">Sobre Mí</a></li>
-						<li><a href="#trabajos">Trabajos</a></li>
-						<li><a href="pages/contacto.html">Contacto</a></li>
+				<!-- LINKS -->
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto align-items-center gap-3">
+						<li class="nav-item">
+							<a class="nav-link" href="../../index.html">Inicio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../../pages/sobre-mi.html">Sobre Mí</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../../index.html#trabajos">Trabajos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link btn-contact-nav" href="../../pages/contacto.html">Contacto</a>
+						</li>
 					</ul>
 				</div>
-				<div class="col-md-4">
-					<h4 class="footer-subtitle-small">Sígueme</h4>
-					<div class="social-links">
-						<a href="https://www.linkedin.com/in/agustinaazamora/" aria-label="LinkedIn"><i
-								class="fab fa-linkedin"></i></a>
-						<a href="https://github.com/AGUSTINAGUSTINA" aria-label="GitHub"><i
-								class="fab fa-github"></i></a>
-						<a href="https://wa.me/5493512729694?text=Hola%20Agustina,%20vi%20tu%20portfolio%20y%20quiero%20consultarte%20por%20un%20proyecto"
-							target="_blank">
-							<i class="fab fa-whatsapp"></i>
-						</a>
+
+			</div>
+		</nav>
+		<main>
+			<section class="case-study wipeout-case">
+				<div class="container-lg">
+					<header class="case-header" data-aos="fade-up">
+						<div class="case-header__title">
+							<h1 class="case-title">Rediseño Banco Macro</h1>
+						</div>
+
+						<div class="case-header__meta">
+							<div class="case-meta">
+								<div class="case-meta__block">
+									<h2 class="case-meta__label">Rol</h2>
+									<ul class="case-meta__list">
+										<li>UX/UI Design</li>
+
+									</ul>
+								</div>
+
+								<div class="case-meta__block">
+									<h2 class="case-meta__label">Ubicación</h2>
+									<ul class="case-meta__list">
+										<li>Argentina</li>
+									</ul>
+								</div>
+
+								<div class="case-meta__block">
+									<h2 class="case-meta__label">Año</h2>
+									<ul class="case-meta__list">
+										<li>2024</li>
+									</ul>
+								</div>
+							</div>
+
+								<a class="case-cta case-cta--floating" href="https://www.behance.net/gallery/189770667/WIPEOUT"
+								target="_blank" rel="noopener noreferrer"
+								aria-label="Ver en Behance (abre en una nueva pestaña)">
+								Ver en Behance
+							</a>
+
+
+						</div>
+					</header>
+
+					<div class="case-hero" data-aos="fade-up" data-aos-delay="100">
+						<video class="case-hero__img" autoplay muted loop playsinline>
+							<source src="../../assets/proyectos/proyecto-rediseño-macro.mp4" type="video/mp4">
+						</video>
+					
+					</div>
+
+					<section class="case-intro" aria-label="Descripción del proyecto" data-aos="fade-up">
+						<h2 class="case-intro__title">Rediseño Banco Macro</h2>
+						<p class="case-intro__text">
+							El rediseño del sitio web de Banco Macro se enfoca en mejorar la experiencia de usuario, a
+							partir de insights obtenidos en pruebas de usabilidad y feedback de
+							usuarios.
+						</p>
+						<p class="case-intro__text">
+							Se propone una interfaz moderna y minimalista que facilita la navegación y el acceso a la
+							información.
+						</p>
+
+
+					</section>
+
+					<section class="case-gallery" aria-label="Galería del proyecto">
+						<div class="case-gallery__grid">
+							<figure class="case-shot case-shot--full" data-aos="fade-up">
+								<img src="../../assets/proyectos/rediseño-minimalista.png"
+									alt="Pantallas del proyecto Wipeout" class="case-shot__img">
+							</figure>
+
+							<section class="user-section" aria-label="Perfiles de usuario">
+								<article class="user-block user-block--principal">
+
+
+									<div class="user-content">
+										<figure class="user-figure">
+											<img src="../../assets/proyectos/metodologia-jamesg.png"
+												alt="Usuario principal usando la app Wipeout" class="user-img"
+												data-aos="fade-right" data-aos-delay="120">
+										</figure>
+										<div class="user-text-group">
+											<div class="user-text">
+												<p>
+													El proyecto se desarrolló siguiendo la metodología de Jesse James
+													Garrett, estructurando el proceso desde la estrategia hasta la
+													superficie para asegurar coherencia entre objetivos, contenido y
+													diseño.
+												</p>
+
+											</div>
+
+										</div>
+									</div>
+								</article>
+
+								<article class="user-block user-block--guest">
+
+
+									<div class="user-content user-content--reverse">
+										<figure class="user-figure">
+											<img src="../../assets/proyectos/boton-banco-chat.png"
+												alt="Usuario invitado usando la app Wipeout" class="user-img"
+												data-aos="fade-left" data-aos-delay="180">
+										</figure>
+										<div class="user-text-group">
+
+
+											<div class="user-text">
+												<p>
+													Se optimizó el acceso a ayuda incorporando BancoChat en todas las
+													pantallas, antes disponible solo en el inicio, previa al ingreso.
+												</p>
+
+
+											</div>
+											<div class="user-text">
+												<p>
+													Además, se mejoró la accesibilidad optimizando el contraste de
+													colores según criterios AAA (WCAG), logrando mayor legibilidad e
+													inclusión para usuarios con distintas capacidades visuales.
+												</p>
+
+
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="user-block user-block--principal">
+
+
+									<div class="user-content">
+										<figure class="user-figure">
+											<img src="../../assets/proyectos/optimizacion.png"
+												alt="Usuario principal usando la app Wipeout" class="user-img"
+												data-aos="fade-right" data-aos-delay="200">
+										</figure>
+										<div class="user-text-group">
+											<div class="user-text">
+												<p>
+													Se optimizó el flujo de ingreso al unificar usuario y contraseña en
+													una sola pantalla, simplificando un proceso que antes requería dos
+													pasos. Además, se incorporó un buscador en todas las pantallas,
+													mejorando la agilidad en la navegación y las acciones del usuario.
+												</p>
+
+											</div>
+
+										</div>
+									</div>
+								</article>
+								<article class="user-block user-block--guest">
+
+
+									<div class="user-content user-content--reverse">
+										<figure class="user-figure">
+											<img src="../../assets/proyectos/opiniones.png"
+												alt="Usuario invitado usando la app Wipeout" class="user-img"
+												data-aos="fade-left" data-aos-delay="220">
+										</figure>
+										<div class="user-text-group">
+
+
+											<div class="user-text">
+												<p>
+													Las decisiones de rediseño se basaron en insights obtenidos de
+													entrevistas a usuarios, encuestas, tree testing y evaluaciones
+													heurísticas. A partir de estos hallazgos, se optimizaron flujos
+													clave como el cambio de contraseña, la consulta del resumen de
+													tarjeta y la visualización de movimientos, mejorando la claridad y
+													eficiencia de la experiencia.
+												</p>
+
+
+											</div>
+
+										</div>
+									</div>
+								</article>
+							</section>
+						</div>
+					</section>
+
+
+				</div>
+			</section>
+
+
+		</main>
+
+		<!-- ==================== FOOTER ==================== -->
+		<footer class="footer-section">
+			<div class="container-lg">
+				<div class="row mb-5">
+					<div class="col-md-4 mb-4 mb-md-0">
+						<h3 class="footer-title">Agustina Zamora</h3>
+						<p class="footer-subtitle">Diseño & Desarrollo</p>
+					</div>
+					<div class="col-md-4 mb-4 mb-md-0">
+						<h4 class="footer-subtitle-small">Navegación</h4>
+						<ul class="footer-links">
+							<li><a href="../../index.html#inicio">Inicio</a></li>
+							<li><a href="../../index.html#sobre-mi">Sobre Mí</a></li>
+							<li><a href="../../index.html#trabajos">Trabajos</a></li>
+							<li><a href="../../pages/contacto.html">Contacto</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h4 class="footer-subtitle-small">Sígueme</h4>
+						<div class="social-links">
+							<a href="https://www.linkedin.com/in/agustinaazamora/" aria-label="LinkedIn"><i
+									class="fab fa-linkedin"></i></a>
+							<a href="https://github.com/AGUSTINAGUSTINA" aria-label="GitHub"><i
+									class="fab fa-github"></i></a>
+							<a href="https://wa.me/5493512729694?text=Hola%20Agustina,%20vi%20tu%20portfolio%20y%20quiero%20consultarte%20por%20un%20proyecto"
+								target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i>
+							</a>
+						</div>
 					</div>
 				</div>
+				<hr class="footer-divider">
+				<div class="footer-bottom text-center">
+					<p>&copy; 2024 Agustina Zamora. UX/UI Designer & Frontend Developer</p>
+				</div>
 			</div>
-			<hr class="footer-divider">
-			<div class="footer-bottom text-center">
-				<p>&copy; 2024 Agustina Zamora. UX/UI Designer & Frontend Developer</p>
-			</div>
-		</div>
-	</footer>
+		</footer>
 
-	<!-- Bootstrap -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-	<!-- AOS-->
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<!-- AOS-->
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-	<!-- Utilities -->
-	<script src="js/utilities.js"></script>
+		<!-- Utilities -->
+		<script src="../../js/utilities.js"></script>
 
-	<!-- Main JS -->
-	<script src="js/main.js"></script>
+		<!-- Main JS -->
+		<script src="../../js/main.js"></script>
 
-	<!-- Effects JS -->
-	<script src="js/effects.js"></script>
+		<!-- Effects JS -->
+		<script src="../../js/effects.js"></script>
 
-	<!-- Split Screen JS -->
-	<script src="js/split-screen.js"></script>
+		<!-- Split Screen JS -->
+		<script src="../../js/split-screen.js"></script>
 </body>
 
 </html>

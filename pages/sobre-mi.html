@@ -1,182 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description"
-        content="Product designer and front end developer with a passion for designing beautiful and functional user experiences.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agustina Zamora</title>
-    <!-- tipografia titillium web -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.google
-    apis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <!-- tipografia public sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- CSS traducido de Sass-->
-    <link rel="stylesheet" href="../css/stylesass.css">
+	<meta charset="UTF-8">
+	<meta name="description"
+		content="Sobre mí: diseñadora UX/UI y desarrolladora frontend. Diseño experiencias claras y desarrollo interfaces sólidas, con foco en usuario y detalle visual.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sobre mí | Agustina Zamora</title>
 
+	<!-- Tipografía Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+		rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- AOS Animation CSS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<!-- Estilos -->
+	<link rel="stylesheet" href="../css/stylesass.css">
 </head>
 
-<body>
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid links_container">
-            <!-- LOGO BRAND -->
-            <a class="navbar-brand logo_container" href="../index.html">
-                <img src="../assets/logo_superior.png" alt="Logo Principal" class="logo_navbar">
-                <span class="logo_subtitle">Zamora Agustina</span>
-            </a>
-            <!-- MENÚ HAMBURGUESA (visible solo en mobile)-->
-            <button class="navbar-toggler custom_toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon menu_icon"></span>
-            </button>
-            <!--BARRA EN DESKTOP (un link al lado del otro a la derecha)-->
-            <div class="collapse navbar-collapse custom_collapse" id="navbarNav">
+<body class="about-page">
+	<!-- ==================== NAVEGACIÓN ==================== -->
+	<nav class="navbar navbar-expand-lg navbar-light sticky-top custom-navbar">
+		<div class="container-lg">
+			<!-- LOGO -->
+			<a class="navbar-brand" href="../index.html">
+				<img src="../assets/logo-header.png" alt="Logo Agustina Zamora" class="logo_navbar">
+			</a>
 
-                <div class="navbar-content container_custom_navbar">
-                    <ul class="navbar-nav custom_navbar">
-                        <li class="nav-item custom_item">
-                            <a class="nav-link custom_links" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item custom_item">
-                            <a class="nav-link custom_links" href="sobre-mi.html">Sobre mí</a>
-                        </li>
-                        <li class="nav-item custom_item">
-                            <a class="nav-link custom_links" href="pages/portfolio-ux-ui.html">Portfolio</a>
-                        </li>
-                        <li class="nav-item custom_link">
-                            <a class="nav-link-boton-turnos nav_turnos" href="pages/contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <main>
-        <section id="sobre-mi" class="quien-soy">
-            <h1>Sobre mí</h1>
-            <p class="sobre-mi">
-                Soy Licenciada en Nutrición y durante varios años tuve mi propio local (una dietética). Siempre me dediqué a escuchar activamente a mis pacientes y clientes para entender sus necesidades reales.
-            </p>
-            <p class="sobre-mi">
-                Con el tiempo no me sentí completamente conectada con la profesión, pero descubrí que lo que realmente me apasionaba era escuchar, detectar necesidades y ofrecer soluciones.
-            </p>
-            <p class="sobre-mi">
-                Esa misma línea me llevó a estudiar Diseño UX/UI, donde pude aplicar esa capacidad de escucha para comprender a los usuarios y diseñar experiencias centradas en sus necesidades. Disfruté profundamente aprender sobre experiencia de usuario.
-            </p>
-            <p class="sobre-mi">
-                Luego sentí la necesidad de llevar esas soluciones a la realidad, por eso estudié desarrollo web. Me apasionó poder convertir el diseño en algo funcional, interactivo y útil.
-            </p>
-            <p class="sobre-mi">
-                Estudié HTML, CSS y JavaScript, y entendí que el desarrollo Front-End es lo que realmente me apasiona. Me resulta muy gratificante encarar un proyecto desde la idea, diseñarlo y luego darle vida con código e interactividad.
-            </p>
+			<!-- BOTÓN MOBILE -->
+			<button class="navbar-toggler custom_toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- LINKS -->
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto align-items-center gap-3">
+					<li class="nav-item">
+						<a class="nav-link" href="../index.html#inicio">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="sobre-mi.html">Sobre Mí</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="trabajos.html">Trabajos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link btn-contact-nav" href="contacto.html">Contacto</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<!-- ==================== HERO / PRESENTACIÓN ==================== -->
+		<header class="about-hero" id="inicio">
+			<div class="container-lg">
+				<div class="about-hero__grid">
+					<div data-aos="fade-up" data-aos-delay="50">
+						<div class="about-hero__eyebrow">
+							<i class="fas fa-circle-notch"></i>
+							<span>UX/UI Designer & Frontend Developer· Córdoba, AR</span>
+						</div>
+
+						<h1 class="about-hero__title">Diseño experiencias claras. Desarrollo interfaces sólidas.</h1>
+						<p class="about-hero__lead">
+							Soy Agustina Zamora. Combino pensamiento de diseño, research y desarrollo frontend para
+							crear productos
+							digitales minimalistas, accesibles y listos para escalar.
+						</p>
+
+						<div class="about-hero__chips" aria-label="Enfoques principales">
+							<a class="about-chip" href="#sobre-mi"><i class="fas fa-user"></i> Enfoque</a>
+							<a class="about-chip" href="#habilidades"><i class="fas fa-chart-line"></i> Skills</a>
+							<a class="about-chip" href="#herramientas"><i class="fas fa-layer-group"></i>
+								Herramientas</a>
+							<a class="about-chip" href="#recorrido"><i class="fas fa-route"></i> Recorrido</a>
+							<a class="about-chip" href="#intereses"><i class="fas fa-bullseye"></i> Intereses</a>
+							<a class="about-chip" href="https://www.canva.com/design/DAGN7RG9xX8/Pjstk7Sogn7ovw3pOsTaCg/view?utm_content=DAGN7RG9xX8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h98b1675cd6#1" target="_blank" rel="noopener noreferrer">
+								<i class="fas fa-user-tie"></i> CV
+							</a>
+						</div>
+
+						<div class="about-hero__actions">
+							<a href="trabajos.html" class="btn btn-primary-custom btn-lg" data-morph>
+								Ver trabajos <i class="fas fa-arrow-right"></i>
+							</a>
+							<a href="contacto.html" class="btn btn-outline-custom btn-lg" data-morph>
+								Contactar <i class="fas fa-paper-plane"></i>
+							</a>
+						</div>
+					</div>
+
+					<div data-aos="fade-left" data-aos-delay="150">
+						<figure class="about-hero__media" data-parallax="0.02">
+							<img src="../assets/foto-perfil.jpg" alt="Foto de perfil de Agustina Zamora">
+							<figcaption class="about-hero__caption">
+								<span><i class="fas fa-check-circle" style="color:#A06868;"></i> Disponible para
+									proyectos</span>
+							
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- ==================== SOBRE MÍ ==================== -->
+		<section id="sobre-mi" class="about-section-modern">
+			<div class="container-lg">
+				<div class="section-heading" data-aos="fade-up">
+					<p class="section-eyebrow">Sobre mí</p>
+					<h2 class="section-title">Un perfil híbrido: empatía + ejecución</h2>
+					<p class="section-subtitle">
+						Vengo de un recorrido donde la escucha activa y la comprensión de necesidades reales siempre
+						fueron el punto de partida.
+						Hoy lo traduzco en experiencias digitales con buena jerarquía visual, microinteracciones sutiles
+						y un frontend cuidado.
+					</p>
+				</div>
+
+				<div class="about-cards">
+					<article class="about-card" data-aos="fade-up" data-aos-delay="100">
+						<div class="about-card__icon"><i class="fas fa-magnifying-glass"></i></div>
+						<h3 class="about-card__title">Diagnóstico y claridad</h3>
+						<p class="about-card__text">
+							Defino objetivos, constraints y criterios de éxito. Priorizo problemas reales, no features
+							“porque sí”.
+						</p>
+					</article>
+
+					<article class="about-card" data-aos="fade-up" data-aos-delay="200">
+						<div class="about-card__icon"><i class="fas fa-pen-ruler"></i></div>
+						<h3 class="about-card__title">Diseño con intención</h3>
+						<p class="about-card__text">
+							Trabajo con sistemas y componentes. Busco consistencia, legibilidad y ritmo visual (mucho
+							whitespace, poca fricción).
+						</p>
+					</article>
+
+					<article class="about-card" data-aos="fade-up" data-aos-delay="300">
+						<div class="about-card__icon"><i class="fas fa-code"></i></div>
+						<h3 class="about-card__title">Frontend prolijo</h3>
+						<p class="about-card__text">
+							Implemento UI con detalle: estados, accesibilidad, responsive y animaciones elegantes que
+							suman (sin distraer).
+						</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- ==================== SKILLS + HERRAMIENTAS ==================== -->
+		<section id="habilidades" class="about-section-modern">
+			<div class="container-lg">
+				<div class="section-heading" data-aos="fade-up">
+					<p class="section-eyebrow">Skills</p>
+					<h2 class="section-title">Diseño y desarrollo, en equilibrio</h2>
+					<p class="section-subtitle">
+						Las barras se animan al entrar en pantalla. Los porcentajes representan mi nivel actual de
+						confianza y autonomía.
+					</p>
+				</div>
+
+				<div class="skills-layout">
+					<div class="skills-panel" data-aos="fade-up" data-aos-delay="100">
+						<h3 class="skills-panel__title">Skills principales</h3>
+
+						<div class="skill-group" aria-label="Lista de habilidades con porcentaje">
+							<div class="skill-meter" data-value="80">
+								<div class="skill-meter__top">
+									<span class="skill-meter__name">UX Research (bases + análisis)</span>
+									<span class="skill-meter__value">80%</span>
+								</div>
+								<div class="skill-meter__track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+									aria-valuenow="80">
+									<div class="skill-meter__fill"></div>
+								</div>
+							</div>
+
+							<div class="skill-meter" data-value="85">
+								<div class="skill-meter__top">
+									<span class="skill-meter__name">Design Systems</span>
+									<span class="skill-meter__value">85%</span>
+								</div>
+								<div class="skill-meter__track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+									aria-valuenow="85">
+									<div class="skill-meter__fill"></div>
+								</div>
+							</div>
+
+							<div class="skill-meter" data-value="75">
+								<div class="skill-meter__top">
+									<span class="skill-meter__name">Prototipado & flujos</span>
+									<span class="skill-meter__value">85%</span>
+								</div>
+								<div class="skill-meter__track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+									aria-valuenow="75">
+									<div class="skill-meter__fill"></div>
+								</div>
+							</div>
+
+							<div class="skill-meter" data-value="80">
+								<div class="skill-meter__top">
+									<span class="skill-meter__name">HTML + CSS (responsive)</span>
+									<span class="skill-meter__value">80%</span>
+								</div>
+								<div class="skill-meter__track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+									aria-valuenow="80">
+									<div class="skill-meter__fill"></div>
+								</div>
+							</div>
+
+							<div class="skill-meter" data-value="65">
+								<div class="skill-meter__top">
+									<span class="skill-meter__name">JavaScript (UI & lógica)</span>
+									<span class="skill-meter__value">65%</span>
+								</div>
+								<div class="skill-meter__track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+									aria-valuenow="65">
+									<div class="skill-meter__fill"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<aside id="herramientas" class="skills-panel" data-aos="fade-up" data-aos-delay="200">
+						<h3 class="skills-panel__title">Herramientas</h3>
+						<div class="tools-grid" aria-label="Herramientas de trabajo">
+							<div class="tool-pill"><i class="fab fa-figma"></i> Figma / FigJam</div>
+							<div class="tool-pill"><i class="fas fa-diagram-project"></i> Flujos & mapas</div>
+							<div class="tool-pill"><i class="fab fa-github"></i> GitHub</div>
+							<div class="tool-pill"><i class="fas fa-code"></i> VS Code</div>
+							<div class="tool-pill"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+							<div class="tool-pill"><i class="fas fa-list-check"></i> Notion</div>
+							<div class="tool-pill"><i class="fas fa-robot"></i> AI Tool: Cursor</div>
+							<div class="tool-pill"><i class="fas fa-robot"></i> AI Tool: Claude</div>
+							<div class="tool-pill"><i class="fas fa-robot"></i> AI Tool: Windsurf</div>
+							<div class="tool-pill"><i class="fas fa-robot"></i> AI Tool: GitHub Copilot</div>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</section>
+
+		<!-- ==================== RECORRIDO ==================== -->
+		<section id="recorrido" class="about-section-modern">
+			<div class="container-lg">
+				<div class="section-heading" data-aos="fade-up">
+					<div class="timeline" aria-label="Recorrido en pasos">
+						<p class="section-eyebrow">Recorrido</p>
+						<h3 class="section-title"> MI recorrido...</h3>
+							<article class="timeline-item">
+								<h3 class="timeline-item__title">Siempre trabajé para las personas</h3>
+								<p class="timeline-item__text">
+									Mi recorrido profesional siempre estuvo conectado con las personas. Como Licenciada
+									en
+									Nutrición, desarrollé una mirada humana basada en la escucha, la empatía y la
+									comprensión de necesidades reales. Además, trabajé en atención al cliente como
+									secretaria y vendedora, tanto en mi propia dietética como en un local de
+									indumentaria,
+									experiencias que fortalecieron mi comunicación, organización y capacidad de
+									adaptación.
+								</p>
+							</article>
+
+							<article class="timeline-item">
+								<h3 class="timeline-item__title">El momento de replantearme mi camino</h3>
+								<p class="timeline-item__text">
+									Llegó un punto en el que me pregunté si dedicarme a la nutrición y sostener mi
+									propio
+									local era realmente lo que más me apasionaba. Y la respuesta fue no. Ese momento
+									marcó
+									el inicio de una búsqueda mucho más profunda: encontrar un camino profesional que
+									realmente me motive, me desafíe y me entusiasme construir a largo plazo.
+								</p>
+							</article>
+
+							<article class="timeline-item">
+								<h3 class="timeline-item__title">Descubrimiento del diseño UX/UI</h3>
+								<p class="timeline-item__text">
+									En esa búsqueda empecé a explorar plataformas de e-learning y distintos
+									cursos disponibles. Entre todas las opciones, hubo una disciplina que inmediatamente
+									captó mi
+									atención: el diseño UX/UI. Empecé a investigar, ver videos y entender de qué se
+									trataba
+									este
+									mundo donde se combinaban estrategia, experiencia, diseño y tecnología. Cuanto más
+									aprendía, más
+									me fascinaba.
+								</p>
+							</article>
 
 
+							
+								<article class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+									<h3 class="timeline-item__title">Del diseño a la implementación</h3>
+									<p class="timeline-item__text">
+										Con el tiempo descubrí que solo diseñar interfaces me dejaba gusto a poco.
+										Sentía la
+										necesidad de que esas ideas no quedaran únicamente en una pantalla estática,
+										sino que
+										pudieran convertirse en experiencias reales, funcionales y con utilidad concreta
+										para
+										las
+										personas. Fue ahí cuando empecé a investigar más y encontré la relación entre
+										UX/UI y
+										Frontend Development.
+									</p>
+									<p class="timeline-item__text">
+										Entré a ese mundo sin demasiadas expectativas, simplemente con curiosidad por
+										entender
+										cómo
+										funcionaba. Pero descubrir todo lo que podía crear combinando diseño y
+										desarrollo
+										literalmente me abrió la cabeza. Empecé a trabajar con HTML, CSS, Bootstrap y
+										SASS,
+										entendiendo cómo llevar una interfaz desde la idea hasta la implementación,
+										cuidando
+										tanto
+										la experiencia visual como los detalles de interacción, estructura y
+										funcionalidad.
+									</p>
+								</article>
 
+								<article class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+									<h3 class="timeline-item__title">Pensar productos completos</h3>
+									<p class="timeline-item__text">
+										A través de proyectos y prácticas, empecé a trabajar con sistemas de diseño,
+										documentación
+										UX/UI, componentes reutilizables y optimización de flujos digitales. Esto me
+										permitió
+										desarrollar una visión más integral del producto, entendiendo cómo conectar
+										negocio,
+										usuarios y experiencia.
+									</p>
+								</article>
 
-            <img src="" alt="imagen de Agustina Maria Zamora">
-            <img src="" alt="Imagen de teclado">
-        </section>
+								<article class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+									<h3 class="timeline-item__title">Hoy</h3>
+									<p class="timeline-item__text">
+										Actualmente continúo perfeccionándome en UX/UI y Frontend Development,
+										combinando
+										sensibilidad humana, diseño visual y desarrollo. Me apasiona crear experiencias
+										digitales
+										funcionales, accesibles y visualmente cuidadas, donde cada decisión tenga
+										intención y
+										aporte
+										valor real a las personas.
+									</p>
+								</article>
+							</div>
+					</div>
+		</section>
 
-        <section id="bar-chart" class="dark nopad-b">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="align-r">Mis habilidades</h2>
+		<!-- ==================== OBJETIVOS / INTERESES ==================== -->
+		<section id="intereses" class="about-section-modern">
+			<div class="container-lg">
+				<div class="section-heading" data-aos="fade-up">
+					<p class="section-eyebrow">Intereses</p>
+					<h2 class="section-title">Lo que me entusiasma construir</h2>
+					<p class="section-subtitle">
+						Me motiva trabajar en productos donde el detalle visual, la claridad y la accesibilidad se
+						notan, y donde el diseño se implementa con calidad.
+					</p>
+				</div>
 
-                    <div class="bar-chart">
-                        <!-- Eje Y -->
-                        <div class="axis">
-                            <div class="label">Experta</div>
-                            <div class="label">Avanzado</div>
-                            <div class="label">Intermedio</div>
-                            <div class="label">Inicial</div>
-                            <div class="label"></div>
-                            <div class="label"></div>
-                        </div>
+				<div class="about-cards">
+					<article class="about-card" data-aos="fade-up" data-aos-delay="100">
+						<div class="about-card__icon"><i class="fas fa-universal-access"></i></div>
+						<h3 class="about-card__title">Accesibilidad real</h3>
+						<p class="about-card__text">
+							Contraste, jerarquía, navegación clara y estados. UI que funciona para más personas, no solo
+							“para verse linda”.
+						</p>
+					</article>
 
-                        <!-- Skills -->
-                        <div class="bar violeta" style="--bar-percent: 70%;">
-                            <div class="fill"></div>
-                            <div class="percent">70%</div>
-                            <div class="skill">UX/UI Designer</div>
-                        </div>
-                        <div class="bar lila" style="--bar-percent: 60%;">
-                            <div class="fill"></div>
-                            <div class="percent">60%</div>
-                            <div class="skill">HTML Developer</div>
-                        </div>
-                        <div class="bar gris" style="--bar-percent: 60%;">
-                            <div class="fill"></div>
-                            <div class="percent">60%</div>
-                            <div class="skill">CSS Developer</div>
-                        </div>
-                        <div class="bar mocka" style="--bar-percent: 20%;">
-                            <div class="fill"></div>
-                            <div class="percent">20%</div>
-                            <div class="skill">JS Developer</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+					<article class="about-card" data-aos="fade-up" data-aos-delay="200">
+						<div class="about-card__icon"><i class="fas fa-cubes"></i></div>
+						<h3 class="about-card__title">Componentes y sistemas</h3>
+						<p class="about-card__text">
+							Escalabilidad: tokens, patrones y consistencia. Me interesa dejar productos “ordenados” para
+							el futuro.
+						</p>
+					</article>
 
-    </main>
+					<article class="about-card" data-aos="fade-up" data-aos-delay="300">
+						<div class="about-card__icon"><i class="fas fa-bolt"></i></div>
+						<h3 class="about-card__title">Performance y detalle</h3>
+						<p class="about-card__text">
+							Animaciones sutiles, feedback inmediato y UI liviana. Menos fricción, más sensación de
+							calidad.
+						</p>
+					</article>
+				</div>
+			</div>
+		</section>
 
+		<!-- ==================== CTA FINAL ==================== -->
+		<section class="final-cta-section">
+			<div class="container-lg text-center" data-aos="fade-up">
+				<h2 class="cta-title">¿Armamos algo con intención?</h2>
+				<p class="cta-subtitle">Si buscás una mezcla real de diseño + implementación, hablemos.</p>
+				<a href="contacto.html" class="btn btn-primary-custom btn-lg">Contactá conmigo</a>
+			</div>
+		</section>
+	</main>
 
-    <!-- Bootstrap JS vía CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- ==================== FOOTER ==================== -->
+	<footer class="footer-section">
+		<div class="container-lg">
+			<div class="row mb-5">
+				<div class="col-md-4 mb-4 mb-md-0">
+					<h3 class="footer-title">Agustina Zamora</h3>
+					<p class="footer-subtitle">Diseño & Desarrollo</p>
+				</div>
+				<div class="col-md-4 mb-4 mb-md-0">
+					<h4 class="footer-subtitle-small">Navegación</h4>
+					<ul class="footer-links">
+						<li><a href="../index.html#inicio">Inicio</a></li>
+						<li><a href="../index.html#sobre-mi">Sobre Mí</a></li>
+						<li><a href="trabajos.html">Trabajos</a></li>
+						<li><a href="contacto.html">Contacto</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h4 class="footer-subtitle-small">Sígueme</h4>
+					<div class="social-links">
+						<a href="https://www.linkedin.com/in/agustinaazamora/" aria-label="LinkedIn"><i
+								class="fab fa-linkedin"></i></a>
+						<a href="https://github.com/AGUSTINAGUSTINA" aria-label="GitHub"><i
+								class="fab fa-github"></i></a>
+						<a href="https://wa.me/5493512729694?text=Hola%20Agustina,%20vi%20tu%20portfolio%20y%20quiero%20consultarte%20por%20un%20proyecto"
+							target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+							<i class="fab fa-whatsapp"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<hr class="footer-divider">
+			<div class="footer-bottom text-center">
+				<p>&copy; 2024 Agustina Zamora. UX/UI Designer & Frontend Developer</p>
+			</div>
+		</div>
+	</footer>
 
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <footer>
-        <section>
-            <div>
-                <img src="../assets/logo_superior.png" alt="Logo de Agustina Zamora">
-            </div>
+	<!-- AOS JS -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-            <div>
-                <h3 class="footer_contacto">Explorar</h3>
-                <a href="./pages/portfolio.html" class="a-footer">Portfolio</a>
-                <a href="./pages/portfolio-ux-ui.html" class="a-footer">Portfolio UX/UI Designer</a>
-                <a href="./pages/portfolio-dev.html" class="a-footer">Portfolio Front-end Developer</a>
-            </div>
+	<!-- Utilities -->
+	<script src="../js/utilities.js"></script>
 
-            <div>
-                <h3 class="footer_contacto">Contacto</h3>
-                <p>Mail: licenciada.azamora@gmail.com</p>
-                <p>Teléfono: +5493512729694</p>
-            </div>
+	<!-- Main JS -->
+	<script src="../js/main.js"></script>
 
-            <div class="redes">
-                <h3 class="footer">Redes Sociales</h3>
-                <div class="iconos">
-                    <a href="https://www.instagram.com/js.humanizinig.education?igsh=MmNxdDN3djRkeGVh" class="a-footer">
-                        <img src="../assets/svg-linkedin.png" alt="Ir al perfil de Linkedin de Agustina Zamora"
-                            title="Linkedin" class="icono-redes">
-                        <a href="mailto:licenciada.azamoram@gmail.com" class="a-footer"> <img
-                                src="../assets/svg-mail.png" alt="Enviar un mail a Agustina Zamora" title="Email"
-                                class="icono-redes">
+	<!-- Effects JS -->
+	<script src="../js/effects.js"></script>
 
-
-                </div>
-            </div>
-        </section>
-        <hr>
-        <p class="footer_derechos_reservados">© 2024 - Todos los Derechos Reservados</p>
-    </footer>
-
-
+	<!-- Page JS -->
+	<script src="../js/sobre-mi.js"></script>
 </body>
 
 </html>

@@ -146,6 +146,22 @@
   font-size: 15px;
 }
 
+/* ================= WIPEOUT CTA POSITION ================= */
+.wipeout-case .case-header__meta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(18px, 4vw, 48px);
+}
+
+.wipeout-case .case-cta--floating {
+  position: static;
+  transform: none;
+  align-self: center;
+  width: clamp(132px, 14vw, 170px);
+  height: clamp(132px, 14vw, 170px);
+}
+
 .case-intro {
   padding: 54px 0 10px;
 }
