@@ -149,11 +149,11 @@
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	background-color: $acento;
+	background-color: $rosa;
 	color: white;
 
 	&:hover {
-		background-color: color.adjust($acento, $lightness: -10%);
+		background-color: color.adjust($rosa, $lightness: -10%);
 		transform: translateY(-2px);
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 	}
@@ -168,14 +168,14 @@
 	border-radius: 8px;
 	font-family: $h;
 	font-weight: $semibold;
-	border: 2px solid $acento;
+	border: 2px solid $rosa;
 	background: transparent;
-	color: $acento;
+	color: $rosa;
 	cursor: pointer;
 	transition: all 0.3s ease;
 
 	&:hover {
-		background-color: $acento;
+		background-color: $rosa;
 		color: white;
 		transform: translateY(-2px);
 	}

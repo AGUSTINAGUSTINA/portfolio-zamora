@@ -1120,6 +1120,7 @@ body {
 		font-size: 32px;
 		font-weight: $bold;
 		margin-bottom: 15px;
+		color: $blanco !important;
 
 		@include small-mobile {
 			font-size: 24px;
@@ -1139,6 +1140,7 @@ body {
 		font-size: 14px;
 		margin-bottom: 30px;
 		opacity: 0.95;
+		text-align: center;
 
 		@include small-mobile {
 			font-size: 12px;
@@ -1450,18 +1452,9 @@ body {
 			border-radius: 999px;
 		}
 
-		.btn-primary-custom,
-		.btn-outline-custom {
-			background-color: #BC8A97 !important;
-			border-color: #BC8A97 !important;
-			color: #ffffff !important;
-		}
+		
 
-		.btn-primary-custom:hover,
-		.btn-outline-custom:hover {
-			filter: brightness(0.95);
-			transform: translateY(-2px);
-		}
+		
 	}
 }
 
