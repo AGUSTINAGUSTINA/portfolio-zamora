@@ -303,9 +303,29 @@ const VideoHandler = {
 		if (videos.length === 0) return;
 
 		videos.forEach(video => {
+			const getPlaybackRate = () => {
+				const raw = video.getAttribute('data-playback-rate') ?? video.dataset.playbackRate;
+				const parsed = Number.parseFloat(raw ?? '');
+				if (!Number.isFinite(parsed)) return null;
+				return Math.max(0.1, Math.min(2, parsed));
+			};
+
+			const applyPlaybackRate = () => {
+				const rate = getPlaybackRate();
+				if (rate == null) return;
+				video.defaultPlaybackRate = rate;
+				video.playbackRate = rate;
+			};
+
 			video.addEventListener('loadedmetadata', () => {
+				applyPlaybackRate();
 				// Video cargado correctamente
-				console.log('Video cargado ✓');
+				console.log('Video cargado');
+			});
+
+			// Algunos navegadores reestablecen playbackRate al iniciar el play
+			video.addEventListener('play', () => {
+				applyPlaybackRate();
 			});
 
 			video.addEventListener('error', () => {

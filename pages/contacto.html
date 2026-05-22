@@ -25,10 +25,10 @@
 
 	<!-- Estilos -->
 	<link rel="stylesheet" href="../css/stylesass.css">
-	<link rel="stylesheet" href="../assets/css/effects.css">
+	<link rel="stylesheet" href="../css/css-effects/effects.css">
 </head>
 
-<body>
+<body data-cursor-default>
 	<!-- ==================== NAVEGACIÓN ==================== -->
 	<nav class="navbar navbar-expand-lg navbar-light sticky-top custom-navbar">
 		<div class="container-lg">
@@ -66,9 +66,8 @@
 	<!-- ==================== HEADER ==================== -->
 	<section class="page-header">
 		<div class="container-lg text-center" data-aos="fade-up">
-			<h1 class="page-title">Hablemos</h1>
-			<p class="page-subtitle">Me encantaría escuchar sobre tu proyecto. Completa el formulario y contactemos
-				pronto.</p>
+			<h1 class="page-title">Me encantaría saber sobre tu proyecto, hablemos...</h1>
+			
 		</div>
 	</section>
 
@@ -126,7 +125,7 @@
 						</div>
 
 						<button type="submit" class="form-submit" data-morph>
-							Enviar Mensaje
+							Enviar por WhatsApp
 						</button>
 					</form>
 				</div>
@@ -146,7 +145,7 @@
 
 					<div class="info-card">
 						<div class="info-icon">
-							<i class="fa-brands fa-square-whatsapp"></i>
+							<i class="fab fa-whatsapp"></i>
 						</div>
 						<h3>WhatsApp</h3>
 						<p>
@@ -246,8 +245,9 @@
 		<div class="container-lg text-center" data-aos="fade-up">
 			<h2 class="cta-title">¿Duda o consulta?</h2>
 			<p class="cta-subtitle">No dudes en escribirme directamente</p>
-			<a href="mailto:licenciada.azamora@gmail.com" class="btn btn-primary-custom btn-lg">
-				<i class="fas fa-envelope"></i> Enviar Email
+			<a href="https://wa.me/5493512729694" target="_blank" rel="noopener noreferrer"
+							aria-label="WhatsApp" class="btn btn-primary-custom btn-lg">
+				 Contactar 
 			</a>
 		</div>
 	</section>
@@ -257,16 +257,17 @@
 		<div class="container-lg">
 			<div class="row mb-5">
 				<div class="col-md-4 mb-4 mb-md-0">
-					<h3 class="footer-title">Agustina Zamora</h3>
-					<p class="footer-subtitle">Diseño & Desarrollo</p>
+					<a class="navbar-brand" href="../index.html">
+						<img src="../assets/footer-logo.png" alt="Logo Agustina Zamora" class="logo_navbar">
+					</a>
 				</div>
 				<div class="col-md-4 mb-4 mb-md-0">
 					<h4 class="footer-subtitle-small">Navegación</h4>
 					<ul class="footer-links">
 						<li><a href="../index.html#inicio">Inicio</a></li>
-						<li><a href="../index.html#sobre-mi">Sobre Mí</a></li>
-						<li><a href="trabajos.html">Trabajos</a></li>
-						<li><a href="contacto.html">Contacto</a></li>
+						<li><a href="./sobre-mi.html">Sobre Mí</a></li>
+						<li><a href="./trabajos.html">Trabajos</a></li>
+						<li><a href="./contacto.html">Contacto</a></li>
 					</ul>
 				</div>
 				<div class="col-md-4">
@@ -324,20 +325,42 @@
 					message: document.getElementById('message').value
 				};
 
-				// Aquí puedes:
-				// 1. Enviar a un servidor (fetch/AJAX)
-				// 2. Agregar a Formspree
-				// 3. Usar emailjs
-				// 4. Enviar a Google Forms
-
-				// Por ahora, mostrar mensaje de éxito
+				// Env�a el contenido a WhatsApp (abre un chat con el mensaje prellenado)
 				if (FormValidation.validate(this)) {
-					NotificationSystem.success('¡Mensaje enviado correctamente! Te responderé pronto.');
+					const projectTypeLabels = {
+						"ux-ui": "Diseño UX/UI",
+						"web-dev": "Desarrollo Web",
+						"both": "Diseño + Desarrollo",
+						"other": "Otro"
+					};
+
+					const typeLabel = projectTypeLabels[formData.projectType] || formData.projectType || "-";
+					const phoneLine = formData.phone ? `Tel�fono: ${formData.phone}` : "Tel�fono: -";
+
+					const whatsappText =
+						`Hola Agus, soy ${formData.name}.\n` +
+						`Email: ${formData.email}\n` +
+						`${phoneLine}\n` +
+						`Asunto: ${formData.subject}\n` +
+						`Tipo de proyecto: ${typeLabel}\n\n` +
+						`${formData.message}`;
+
+					const whatsappNumber = "5493512729694";
+					const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+					NotificationSystem.success("Tu formulario ha sido enviado con éxito. Confirmalo en WhatsApp.");
+
+					const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+					if (!opened) {
+						setTimeout(() => {
+							window.location.href = whatsappUrl;
+						}, 250);
+					}
 					this.reset();
 
 					// Limpiar estilos
-					document.querySelectorAll('.form-group').forEach(group => {
-						group.classList.remove('focused');
+					document.querySelectorAll(".form-group").forEach((group) => {
+						group.classList.remove("focused");
 					});
 				}
 			});

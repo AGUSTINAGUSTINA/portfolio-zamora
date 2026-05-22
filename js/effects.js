@@ -3,9 +3,12 @@
 
 const CursorEffects = {
 	init() {
-		if (window.innerWidth <= 768) return; // No en dispositivos mÃ³viles
-		
+		if (window.innerWidth <= 768) return; // No en dispositivos móviles
+		if (document.documentElement.hasAttribute('data-cursor-default')) return;
+		if (document.body && document.body.hasAttribute('data-cursor-default')) return;
+
 		this.createCustomCursor();
+		if (document.body) document.body.classList.add('custom-cursor-enabled');
 		this.trackMouse();
 		this.addCursorInteractions();
 	},

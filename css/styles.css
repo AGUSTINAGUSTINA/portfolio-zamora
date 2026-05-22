@@ -280,7 +280,7 @@ p {
 
 /* 🔥 CONTROL REAL DEL LOGO */
 .logo_navbar {
-  height: 80px; /* 🔥 cambiá este valor y ahora SÍ responde */
+  height: 100px;
   width: auto;
   display: block;
 }

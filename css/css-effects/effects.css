@@ -57,8 +57,8 @@
 	}
 }
 
-/* Ocultar cursor por defecto */
-body {
+/* Ocultar cursor por defecto solo cuando estÃ¡ habilitado el cursor personalizado */
+body.custom-cursor-enabled {
 	cursor: none;
 }
 
@@ -155,8 +155,8 @@ button {
 
 .notification {
 	position: fixed;
-	bottom: 30px;
-	left: 30px;
+	top: 24px;
+	right: 24px;
 	background: white;
 	padding: 16px 24px;
 	border-radius: 8px;
@@ -165,7 +165,7 @@ button {
 	font-weight: 500;
 	max-width: 300px;
 	opacity: 0;
-	transform: translateX(-400px);
+	transform: translateX(400px);
 	transition: all 0.3s ease;
 	border-left: 4px solid #A06868;
 }
@@ -197,9 +197,9 @@ button {
 
 @media (max-width: 768px) {
 	.notification {
-		bottom: 20px;
-		left: 20px;
-		right: 20px;
+		top: 16px;
+		right: 16px;
+		left: 16px;
 		max-width: none;
 	}
 }
@@ -219,6 +219,7 @@ button {
 .form-group input,
 .form-group textarea {
 	position: relative;
+	z-index: 1;
 	width: 100%;
 	border: 2px solid #f0f0f0;
 	border-radius: 8px;
@@ -260,10 +261,11 @@ button {
 	transition: all 0.3s ease;
 	background: white;
 	padding: 0 4px;
+	z-index: 2;
 }
 
 .form-group.focused label,
-.form-group input:not(:placeholder-shown) ~ label {
+.form-group label.floating {
 	top: -12px;
 	left: 12px;
 	font-size: 12px;
