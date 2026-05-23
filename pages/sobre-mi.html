@@ -96,6 +96,9 @@
 							<a class="about-chip" href="#idiomas" target="_blank" rel="noopener noreferrer">
 								<i class="fas fa-globe"></i> Idiomas
 							</a>
+							<a class="about-chip" href="#certificados">
+								<i class="fas fa-certificate"></i> Certificados
+							</a>
 						</div>
 
 						<div class="about-hero__actions">
@@ -289,6 +292,61 @@
 			</div>
 		</section>
 
+		<!-- ==================== CERTIFICADOS ==================== -->
+		<section id="certificados" class="about-section-modern">
+			<div class="container-lg">
+				<div class="section-heading" data-aos="fade-up">
+					<p class="section-eyebrow">Certificados</p>
+					<h2 class="section-title">Cursos y certificaciones</h2>
+					<p class="section-subtitle">Hacé click para ver cada certificado.</p>
+				</div>
+
+				<div class="certificates-grid" aria-label="Lista de certificados" data-aos="fade-up" data-aos-delay="100">
+					<button type="button" class="certificate-card" data-cert-src="../assets/certificados/c-desarrollo-web.png"
+						data-cert-title="Desarrollo web (HTML + CSS)">
+						<span class="certificate-card__icon"><i class="fas fa-code"></i></span>
+						<span class="certificate-card__title">Desarrollo web (HTML + CSS)</span>
+						<span class="certificate-card__meta">Ver certificado</span>
+					</button>
+
+					<button type="button" class="certificate-card" data-cert-src="../assets/certificados/c-diseño-ux-ui.png"
+						data-cert-title="Diseño UX/UI">
+						<span class="certificate-card__icon"><i class="fas fa-pen-ruler"></i></span>
+						<span class="certificate-card__title">Diseño UX/UI</span>
+						<span class="certificate-card__meta">Ver certificado</span>
+					</button>
+
+					<button type="button" class="certificate-card" data-cert-src="../assets/certificados/c-diseño-ux-ui-avanzado.png"
+						data-cert-title="Diseño UX/UI Avanzado">
+						<span class="certificate-card__icon"><i class="fas fa-layer-group"></i></span>
+						<span class="certificate-card__title">Diseño UX/UI Avanzado</span>
+						<span class="certificate-card__meta">Ver certificado</span>
+					</button>
+
+					<button type="button" class="certificate-card" data-cert-src="../assets/certificados/c-fundamentos-ia.png"
+						data-cert-title="Fundamentos de la IA">
+						<span class="certificate-card__icon"><i class="fas fa-brain"></i></span>
+						<span class="certificate-card__title">Fundamentos de la IA</span>
+						<span class="certificate-card__meta">Ver certificado</span>
+					</button>
+
+					<button type="button" class="certificate-card" data-cert-src="../assets/certificados/c-worshop-prompt.png"
+						data-cert-title="Workshop de Prompt Engineer">
+						<span class="certificate-card__icon"><i class="fas fa-wand-magic-sparkles"></i></span>
+						<span class="certificate-card__title">Workshop de Prompt Engineer</span>
+						<span class="certificate-card__meta">Ver certificado</span>
+					</button>
+
+					<button type="button" class="certificate-card" data-cert-src="../assets/certificados/c-js.png"
+						data-cert-title="Desarrollo web (JavaScript)">
+						<span class="certificate-card__icon"><i class="fab fa-js"></i></span>
+						<span class="certificate-card__title">Desarrollo web (JavaScript)</span>
+						<span class="certificate-card__meta">Ver certificado</span>
+					</button>
+				</div>
+			</div>
+		</section>
+
 		<!-- ==================== RECORRIDO ==================== -->
 		<section id="recorrido" class="about-section-modern">
 			<div class="container-lg">
@@ -397,6 +455,7 @@
 						</article>
 					</div>
 				</div>
+
 		</section>
 
 		<!-- ==================== OBJETIVOS / INTERESES ==================== -->
@@ -451,6 +510,16 @@
 			</div>
 		</section>
 	</main>
+
+	<!-- ==================== CERTIFICADO MODAL ==================== -->
+	<div class="certificate-modal" id="certificateModal" hidden>
+		<div class="certificate-modal__backdrop" data-cert-close></div>
+		<div class="certificate-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
+			<button type="button" class="certificate-modal__close" aria-label="Cerrar" data-cert-close>×</button>
+			<h3 class="certificate-modal__title" id="certificateModalTitle"></h3>
+			<img class="certificate-modal__image" alt="" />
+		</div>
+	</div>
 
 	<!-- ==================== FOOTER ==================== -->
 	<footer class="footer-section">
